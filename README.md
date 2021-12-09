@@ -13,10 +13,11 @@ This scripts can create backups and Plugin updates for GeyserMC and Floodgate. (
 `apt-get install zip` - zip to zip or unzip something  
 `apt-get install wget` - wget to upload files (like plugins)  
 `apt-get install findutils` - [Essentials](https://wiki.ubuntuusers.de/xargs/) Package  
-
-
-
+`apt-get install diffutils` - Yes this too  
+  
 `dpkg -l | grep <package name>` - to see if you have the package  
 
-- [ ] Writing readme.
+### How to install this?
+You can just put the files into your server files (where also your `server.properties` are) 
+- [X] Writing readme.
 - [ ] Upload data.
