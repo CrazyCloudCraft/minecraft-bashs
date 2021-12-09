@@ -14,5 +14,5 @@ This scripts can create backups and Plugin updates for GeyserMC and Floodgate. (
 - `apt-get install ` -
 - `dpkg -l | grep <package name>` - to see if you have the package
 
-- [] Writing readme.
-- [] Upload data.
+- [ ] Writing readme.
+- [ ] Upload data.
