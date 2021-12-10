@@ -26,4 +26,4 @@ You need `joe` istalled to edit those: `apt-get install joe`
   
 - [X] Writing readme
 - [X] Uplad files
-- [X] Update files to 2.1 (for easyer configuring)
+- [ ] Update files to 2.1 (for easyer configuring)
