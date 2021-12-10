@@ -19,5 +19,3 @@ This scripts can create backups and Plugin updates for GeyserMC and Floodgate. (
 
 ### How to install this?
 You can just put the files into your server files (where also your `server.properties` are) 
-- [X] Writing readme.
-- [ ] Upload data.
