@@ -1,7 +1,7 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
 # Made by CrazyCloudCraft 08.12.2021 https://crazycloudcraft.de
-# Configuration:
+# Version 2.0 Configuration:
 
 # Set your Minecraft version like 1.17, 1.17.1, 1.18
 MAINVERSION=1.17.1
