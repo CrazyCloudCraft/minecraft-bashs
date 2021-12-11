@@ -1,5 +1,5 @@
 # Server scripts to start or stop a Minecraft PaperMC server
-Start, stop and restart scripts for your Minecraft server using PaperMC for native use or use in systemd with Debian.
+Start, stop and restart scripts for your Minecraft server using PaperMC for native use or use in systemd with Debian.  
 Hey, we will make a big update soon so please just wait for the update.
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
