@@ -1,12 +1,12 @@
-# Server scripts to start or stop an Minecraft server
-Start, stop and restart scripts for your Minecraft server using PaperMC.
+# Server scripts to start or stop a Minecraft PaperMC server
+Start, stop and restart scripts for your Minecraft server using PaperMC for native use or use in systemd with Debian.
   
 ### What can I do with this?
-This scripts don't only restart or stop and start your server.  
-This scripts can create backups and plugin updates for GeyserMC and Floodgate. (You can also disable this).
+These scripts won't only restart or stop and start your server.  
+Furthermore these scripts can create backups, keep your Paper up to date and provide plugin updates for GeyserMC and Floodgate. (You can also disable this).
 #### What you need to use the bash files:
-- You need an Minecraft [PaperMC](https://papermc.io) server runnig in `/opt/`
-- You need an folder in your Minecraft Server called jar (Command: `mkdir jar`)
+- You need a Minecraft [PaperMC](https://papermc.io) server runnig in `/opt/`
+- You need a subfolder in your Minecraft Server folder called jar (Command: `mkdir jar`)
 - And you also need this addons:  
 `apt-get install screen` - screen to see  
 `apt-get install sudo` - sudo is sudo  
