@@ -1,6 +1,6 @@
 # Server scripts to start or stop a Minecraft PaperMC server
 Start, stop and restart scripts for your Minecraft server using PaperMC for native use or use in systemd with Debian.
-  
+Hey, we will make a big update soon so please just wait for the update.
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
 Furthermore these scripts can create backups, keep your Paper up to date and provide plugin updates for GeyserMC and Floodgate. (You can also disable this).
@@ -24,6 +24,6 @@ And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` yo
 You need `joe` istalled to edit those: `apt-get install joe`  
   
   
-- [X] Writing readme
+- [ ] Writing readme
 - [X] Uplad files
-- [ ] Update files to 2.1 (for easyer configuring)
+- [ ] Update files to 2.1 (for easyer configuring & bugg fixes)
