@@ -10,9 +10,9 @@ DISPLAYNAME=Paper
 
 # Tranzlations:
 # Stopping Message Tranzlation:
-MESSAGESTOP=Server is stopping in
+MESSAGESTOP="Server is stopping in"
 # Message time Tranzlation:
-DISPLAYTRANZTIME=seconds
+DISPLAYTRANZTIME="seconds"
 
 
 
