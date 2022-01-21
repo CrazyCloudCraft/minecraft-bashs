@@ -1,18 +1,19 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
 # Made by CrazyCloudCraft 08.12.2021 https://crazycloudcraft.de
-# Version 2.0 Configuration:
+# Update v2.0.1 made by CrazyCloudCraft 21.1.2022
 
-# Set your Minecraft version like 1.17, 1.17.1, 1.18
-MAINVERSION=1.17.1
+# Version 2.0.1 Configuration:
+# Set your Minecraft version like 1.17, 1.17.1, 1.18 and 1.18.1
+MAINVERSION=1.18.1
 # Set your server path. Where is your paper.jar?
 LPATH=/opt/Paper
 # Backups go here underneath /opt
 BPATH=Paper_backups
-# What jar and screen name does your Minecraft Server have?
+# What jar and screen name does your Minecraft server have?
 MCNAME=paper
-
-# Don't forget to set your ... -Xms2048M -Xmx2048M ... at the end of this script!
+# What ram does your server need? You can set G for GB and M for MB.
+MCRAM=4G
 
 
 # Script start. Do not configure this!
@@ -110,9 +111,9 @@ cd $LPATH
 # What you can write here!
 #screen -d -m -L -S $MCNAME /bin/bash -c "/usr/bin/java -Xms2G -Xmx2G -jar $MCNAME.jar"
 
+# More information ...
 # Online with:
-screen -d -m -L -S $MCNAME /bin/bash -c "/usr/bin/java -Xms2048M -Xmx2048M -jar $MCNAME.jar"
-
+screen -d -m -L -S $MCNAME /bin/bash -c "/usr/bin/java Xms$MCRAM -Xmx$MCRAM -jar $MCNAME.jar nogui -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # More information ...
 #https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/ mit 4GB
 #screen -d -m -L -S $MCNAME /bin/bash -c "java -Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $MCNAME.jar nogui"
