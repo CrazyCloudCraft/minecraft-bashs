@@ -22,7 +22,7 @@ Furthermore these scripts can create backups, keep your Paper up to date and pro
 You can just put the files into your server files (where also your `server.propeties` are)  
 You can use this command: `wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/minecraft-server-assets-v2.3/server-start-scripts-v2.3.zip`  
 Or `wget https://t1p.de/zceh` (easyer)  
-And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close zhe files with `strg + k + x` on your keyboard.  
+And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close the files with `strg + k + x` on your keyboard.  
   
 You need `joe` istalled to edit those: `apt-get install joe`  
   
