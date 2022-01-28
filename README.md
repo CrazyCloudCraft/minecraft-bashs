@@ -20,12 +20,28 @@ Furthermore these scripts can create backups, keep your Paper up to date and pro
 ### How to install this?
 
 You can just put the files into your server files (where also your `server.propeties` are)  
-You can use this command: `-`
+You can use this command: `wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/minecraft-server-assets-v2.3/server-start-scripts-v2.3.zip`  
+Or `wget https://t1p.de/zceh` (easyer)  
 And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close zhe files with `strg + k + x` on your keyboard.  
   
 You need `joe` istalled to edit those: `apt-get install joe`  
   
   
-- [ ] Writing readme
+## ------------------------------------------------
+### Update V2.3
+The scripts has now more features!  
+  
+You can set your software PaperMC, PurPurMC, or for Proxy Velocity  
+- It's now easyer to configure the files!  
+- You can now tranzlate your messages in your language. (default language is english)  
+  
+This feature may come in the future:  
+- Only one configuration file, with easyer configuration.  
+- Spigot and Bungeecord support. (Bukkit will never supported here, only if many people ask.)  
+  
+  
+## ------------------------------------------------
+  
+- [X] Writing readme
 - [X] Uplad files
-- [ ] Update files to 2.1 (for easyer configuring & bugg fixes)
+- [X] Update files to 2.1 (for easyer configuring & bugg fixes)
