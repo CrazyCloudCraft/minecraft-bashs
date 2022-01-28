@@ -5,7 +5,7 @@ Start, stop and restart scripts for your Minecraft server using PaperMC for nati
 These scripts won't only restart or stop and start your server.  
 Furthermore these scripts can create backups, keep your Paper up to date and provide plugin updates for GeyserMC and Floodgate. (You can also disable this).
 #### What you need to use the bash files:
-- You need a Minecraft [PaperMC](https://papermc.io) or [PurPur]() server runnig in `/opt/`
+- You need a Minecraft [PaperMC](https://papermc.io) or [PurPur](https://purpurmc.org) server runnig in `/opt/`
 - You need a subfolder in your Minecraft Server folder called jar (Command: `mkdir jar`)
 - And you also need this addons:  
 `apt-get install screen` - screen to see  
