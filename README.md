@@ -5,7 +5,7 @@ Start, stop and restart scripts for your Minecraft server using PaperMC for nati
 These scripts won't only restart or stop and start your server.  
 Furthermore these scripts can create backups, keep your Paper up to date and provide plugin updates for GeyserMC and Floodgate. (You can also disable this).
 #### What you need to use the bash files:
-- You need a Minecraft [PaperMC](https://papermc.io) server runnig in `/opt/`
+- You need a Minecraft [PaperMC](https://papermc.io) or [PurPur]() server runnig in `/opt/`
 - You need a subfolder in your Minecraft Server folder called jar (Command: `mkdir jar`)
 - And you also need this addons:  
 `apt-get install screen` - screen to see  
@@ -18,8 +18,10 @@ Furthermore these scripts can create backups, keep your Paper up to date and pro
 `dpkg -l | grep <package name>` - to see if you have the package  
 
 ### How to install this?
-You can just put the files into your server files (where also your `server.properties` are)  
-And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close zhe files with strg + k + x on your keyboard.  
+
+You can just put the files into your server files (where also your `server.propeties` are)  
+You can use this command: `-`
+And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close zhe files with `strg + k + x` on your keyboard.  
   
 You need `joe` istalled to edit those: `apt-get install joe`  
   
