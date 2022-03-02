@@ -34,7 +34,7 @@ UPDATEGEYSER=FALSE
 PRUPDATEGEYSER=FALSE
 
 
-MESSAGE="hello"
-export MESSAGE
-./b.sh
+# Only Variables DO NOT EDIT THIS or your server may be deleted
+export RAM
+./start.sh
 
