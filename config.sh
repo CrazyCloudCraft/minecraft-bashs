@@ -43,6 +43,19 @@ MCNAME=paper
 MTRANZLATION="The server is not running. Starting server."
 
 
+# Configuration:
+
+# What jar and screen name does your Minecraft Server have?
+MCNAME=paper
+# The Messages displayed name. - Does not matter what you write here.
+DISPLAYNAME=Paper
+
+# Tranzlations:
+# Stopping Message Tranzlation:
+MESSAGESTOP="Server is stopping in"
+# Message time Tranzlation:
+DISPLAYTRANZTIME="seconds"
+
 # Only Variables DO NOT EDIT THIS or your server may be deleted
 export RAM
 ./start.sh
