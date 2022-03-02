@@ -4,9 +4,10 @@
 # Version 2.1 made by CrazyCloudCraft 11.12.2021 https://crazycloudcraft.de
 # Version 2.2 made by CrazyCloudCraft 14.01.2022 https://crazycloudcraft.de
 # Version 2.3 made by CrazyCloudCraft 14.01.2022 https://crazycloudcraft.de 
+# Version 2.3-dev.1 made by CrazyCloudCraft 02.03.2022 https://crazycloudcraft.de 
 
 # Configuration:
-# Define your Minecraft version like 1.17, 1.17.1, 1.18 based on PaperMC and PurPurMC
+# Define your Minecraft version like 1.17, 1.17.1, 1.18, 1.18.1 based on PaperMC and PurPurMC
 # For Velocity you set the latest PROXY version ( in the moment: 3.1.1 )
 MAINVERSION=1.18.1
 # What type of Server Software do you use? 
@@ -43,6 +44,7 @@ PRUPDATEGEYSER=FALSE
 
 
 # Script start: Do not change after here ###############################################
+
 
 # Your local absolute path
 LPATH=/$OPTBASE/$SERVERBASE
