@@ -32,3 +32,9 @@ UPDATEGEYSER=FALSE
 # Do you need Geyer on Velocity? (Proxy) 
 # (Floodgate must bee enabled by the standalone servers)
 PRUPDATEGEYSER=FALSE
+
+
+MESSAGE="hello"
+export MESSAGE
+./b.sh
+
