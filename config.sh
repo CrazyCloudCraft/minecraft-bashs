@@ -33,6 +33,15 @@ UPDATEGEYSER=FALSE
 # (Floodgate must bee enabled by the standalone servers)
 PRUPDATEGEYSER=FALSE
 
+# Restart
+# Configuration:
+# Set your server path. Where is your paper.jar?
+MPATH=/opt/Paper
+# What jar and screen name does your Minecraft server have?
+MCNAME=paper
+# Tranzlation:
+MTRANZLATION="The server is not running. Starting server."
+
 
 # Only Variables DO NOT EDIT THIS or your server may be deleted
 export RAM
