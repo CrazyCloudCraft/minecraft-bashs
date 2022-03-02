@@ -1,7 +1,7 @@
 #!/bin/bash
 # Minecraft Server start/stop configuration - Check if server is already started
 # Version 2.3-dev.1 made by CrazyCloudCraft 02.03.2022 https://crazycloudcraft.de 
-
+set -a
 # Configuration:
 # Define your Minecraft version like 1.17, 1.17.1, 1.18, 1.18.1 based on PaperMC and PurPurMC
 # For Velocity you set the latest PROXY version ( in the moment: 3.1.1 )
@@ -58,8 +58,11 @@ DISPLAYTRANZTIME="seconds"
 
 # Only Variables DO NOT EDIT THIS or your server may be deleted
 TESTMESSAGE=Yes
-export TESTMESSAGE
-
-export RAM
+set +a
 ./start.sh
+./stop.sh
+./restart.sh
+
+
+
 
