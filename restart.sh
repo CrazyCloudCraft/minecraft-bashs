@@ -5,7 +5,7 @@
 echo "Restarts?: $TESTMESSAGE"
 
 # Script start. Do not configure this!
-if ! screen -list | grep -q "$MCNAME "; then
+if ! screen -list | grep -q "$MCNAME"; then
     echo "$MTRANZLATION"
     # Start server
     /bin/bash $MPATH/start.sh
