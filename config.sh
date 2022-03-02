@@ -57,6 +57,9 @@ MESSAGESTOP="Server is stopping in"
 DISPLAYTRANZTIME="seconds"
 
 # Only Variables DO NOT EDIT THIS or your server may be deleted
+TESTMESSAGE=Yes
+export TESTMESSAGE
+
 export RAM
 ./start.sh
 
