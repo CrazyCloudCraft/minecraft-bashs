@@ -8,7 +8,7 @@
 MAINVERSION=1.18.1
 # What type of Server Software do you use? 
 # You can use: PAPER , PURPUR , MOHIST , SPIGOT 
-# And for Proxy: VELOCITY
+# And for Proxy: VELOCITY , BUNGEE
 ASOFTWARE=PAPER
 # Set your folder where the subfolders of your server shall run
 OPTBASE=opt
