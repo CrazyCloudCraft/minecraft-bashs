@@ -62,7 +62,7 @@ set +a
 ./start.sh
 ./stop.sh
 ./restart.sh
-
+./setup.sh
 
 
 
