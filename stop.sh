@@ -1,20 +1,6 @@
 #!/bin/bash
 # Minecraft Server auto stop script - 
 # Made by CrazyCloudCraft 08.12.2021 https://crazycloudcraft.de
-# Configuration:
-
-# What jar and screen name does your Minecraft Server have?
-MCNAME=paper
-# The Messages displayed name. - Does not matter what you write here.
-DISPLAYNAME=Paper
-
-# Tranzlations:
-# Stopping Message Tranzlation:
-MESSAGESTOP="Server is stopping in"
-# Message time Tranzlation:
-DISPLAYTRANZTIME="seconds"
-
-
 
 # Script start. Do not configure this!
 
