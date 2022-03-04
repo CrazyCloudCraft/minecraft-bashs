@@ -34,6 +34,12 @@ if [ $BACKUP = "TRUE" ]; then
  fi
 fi
 
+if [ $NEWBACKUP = "TRUE" ]; then
+ if [ -f "$MCNAME.jar" ]; then
+    echo "Setup backup server (to /var/cache/rsnapshot/daily.0 folder)" | /usr/bin/logger -t $MCNAME
+    cd /var/tmp
+    wget -q https://github.com/CrazyCloudCraft/serverassets
+
 # Clean Logfiles
 /usr/bin/find $LPATH/logs -type f -mtime +6 -delete > /dev/null 2>&1
 
