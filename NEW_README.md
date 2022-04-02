@@ -10,7 +10,7 @@ With fast performance:
 With slow performance:  
 (Proxy) [Bungeecord](https://spigotmc.org)  
   
-Modificated (Plugins & Froge Mods):  
+Modificated (Plugins & Forge Mods):  
 (Server) [MohistMC](https://mohistmc.com)  
   
 ### What can I do with this?
