@@ -9,7 +9,6 @@
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
     </a>
   
---- 
 ### Server scripts to start or stop a Minecraft server
 Start, stop and restart scripts for your Minecraft server for native use or use in systemd with Debian.  
   
