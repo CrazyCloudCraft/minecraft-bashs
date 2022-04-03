@@ -34,7 +34,7 @@ The v2.5 scripts installs everything what they need to work.
 ### How to install this?
 
 You can just put the files into your server files (where also your `server.propeties` are)  
-You can use this command: `wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/minecraft-server-assets-v2.5/server-start-scripts-v2.5.zip`  
+You can use this command: `wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5/server-start-scripts-v2.5.zip`  
 And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close (and save) the files with `strg + k + x` on your keyboard.  
   
 You probably need `joe` istalled to edit those: `apt-get install joe`  
