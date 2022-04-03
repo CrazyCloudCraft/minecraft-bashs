@@ -21,23 +21,13 @@ Start, stop and restart scripts for your Minecraft server for native use or use 
   
 ---
 ### Supported Software  
-With fast performance:  
-(Server) [PurpurMC](https://purpurmc.org)  
-(Server) [PaperMC](https://papermc.io)  
-(Proxy) [Velocity](https://velocitypowered.com)  
-
-With slow performance:  
-(Proxy) [Bungeecord](https://spigotmc.org)  
-  
-Modificated (Plugins & Forge Mods):  
-(Server) [MohistMC](https://mohistmc.com)  
-
-| Server/Proxy | Software
+| Type | Software
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Server   | [PurpurMC](https://purpurmc.org) 
 | Server | [PaperMC](https://papermc.io)         
 | Proxy     | [Velocity](https://velocitypowered.com) 
-| 
+| Proxy         | [Bungeecord](https://spigotmc.org)  
+| Modded        | [MohistMC](https://mohistmc.com)  
 ---
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
