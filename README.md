@@ -41,6 +41,7 @@ Furthermore these scripts can create backups, keep your Software up to date and 
 You need one of the Minecraft Software types runnig in `/opt/` or you didn't need anything.  
 The v2.5 scripts installs everything what they need to work.  
   
+---
 ### How to install this?
 
 You can just put the files into your server files (where also your `server.propeties` are)  
