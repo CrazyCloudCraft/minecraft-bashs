@@ -1,15 +1,21 @@
 <p align="center">
     <img src="https://crazycloudcraft.de/wp-content/uploads/2021/04/cropped-crazycloudcraft-icon-server.png" width="150">
+</a>
 <p align="center">
-    <a href="https://crazycloudcraft.de">
-        <img src="https://img.shields.io/badge/wiki-click-blue.svg" />
+    <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
+        <img src="https://img.shields.io/github/v/release/CrazyCloudCraft/minecraft-bashs?color=%2350AFFF&label=latest%20release&logo=FutureLearn&logoColor=50AFFF&style=flat-square" />
     </a>
     <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
     </a>
-</p>
+    <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/wiki">
+        <img src="" />
+    </a>
+    <a href="main">
+        <img src="https://img.shields.io/github/commits-since/CrazyCloudCraft/minecraft-bashs/v2.5.0/master?color=DDFF50&label=commits&logo=GitHub&style=flat-square" />
+    </a>
   
----
+--- 
 ### Server scripts to start or stop a Minecraft server
 Start, stop and restart scripts for your Minecraft server for native use or use in systemd with Debian.  
   
