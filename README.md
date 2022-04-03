@@ -27,14 +27,15 @@ These scripts won't only restart or stop and start your server.
 Furthermore these scripts can create backups, keep your Software up to date and provide plugin updates for e.g. GeyserMC and Floodgate.
   
 #### What you need to use the bash files:
-You need one of the Minecraft Software types runnig in `/opt/` or you didn't need anything.  
-The v2.5 scripts installs everything what they need to work.  
+You need one of the Minecraft Software types or you didn't need anything.  
+The v2.5 scripts installs everything (exept for java) what they need to work.  
   
 ---
 ### How to install this?
 
 You can just put the files into your server files (where also your `server.propeties` are)  
-You can use this command: `wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5/server-start-scripts-v2.5.zip`  
+You can use this command:
+`wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5/server-start-scripts-v2.5.zip`  
 And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close (and save) the files with `strg + k + x` on your keyboard.  
   
 You probably need `joe` istalled to edit those: `apt-get install joe`  
