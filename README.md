@@ -31,7 +31,13 @@ With slow performance:
   
 Modificated (Plugins & Forge Mods):  
 (Server) [MohistMC](https://mohistmc.com)  
-  
+
+| Server/Proxy | Software
+|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
+| Server   | [PurpurMC](https://purpurmc.org) 
+| Server | [PaperMC](https://papermc.io)         
+| Proxy     | [Velocity](https://velocitypowered.com) 
+| 
 ---
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
