@@ -8,12 +8,6 @@
     <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
     </a>
-    <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/wiki">
-        <img src="https://img.shields.io/appveyor/build/CrazyCloudCraft/minecraft-bashs?style=flat-square" />
-    </a>
-    <a href="main">
-        <img src="https://img.shields.io/github/commits-since/CrazyCloudCraft/minecraft-bashs/v2.5.0/master?color=DDFF50&label=commits&logo=GitHub&style=flat-square" />
-    </a>
   
 --- 
 ### Server scripts to start or stop a Minecraft server
