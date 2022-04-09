@@ -4,9 +4,9 @@
 # Configuration:
 
 # What jar and screen name does your Minecraft Server have?
-MCNAME=paper
+MCNAME=server
 # The Messages displayed name. - Does not matter what you write here.
-DISPLAYNAME=Paper
+DISPLAYNAME=Server
 
 # Tranzlations:
 # Stopping Message Tranzlation:

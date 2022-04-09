@@ -4,9 +4,9 @@
 
 # Configuration:
 # Set your server path. Where is your paper.jar?
-MPATH=/opt/Paper
+MPATH=/opt/Server
 # What jar and screen name does your Minecraft server have?
-MCNAME=paper
+MCNAME=server
 # Tranzlation:
 MTRANZLATION="The server is not running. Starting server."
 

@@ -1,47 +1,42 @@
-# Server scripts to start or stop a Minecraft PaperMC, PurPurMC or Velocity server
-Start, stop and restart scripts for your Minecraft server using PaperMC for native use or use in systemd with Debian.  
-**Hey, we will make a big update soon so please just wait for the update.**
+<p align="center">
+    <img src="https://crazycloudcraft.de/wp-content/uploads/2021/04/cropped-crazycloudcraft-icon-server.png" width="150">
+</a>
+<p align="center">
+    <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
+        <img src="https://img.shields.io/github/v/release/CrazyCloudCraft/minecraft-bashs?color=%2350AFFF&label=latest%20release&logo=FutureLearn&logoColor=50AFFF&style=flat-square" />
+    </a>
+    <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
+        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
+    </a>
+  
+### Server scripts to start or stop a Minecraft server
+Start, stop and restart scripts for your Minecraft server for native use or use in systemd with Debian.  
+  
+---
+### Supported Software  
+| Type | Software
+|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
+| Server   | [PurpurMC](https://purpurmc.org) 
+| Server | [PaperMC](https://papermc.io)         
+| Proxy     | [Velocity](https://velocitypowered.com) 
+| Proxy         | [Bungeecord](https://spigotmc.org)  
+| Modded        | [MohistMC](https://mohistmc.com)  
+---
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
-Furthermore these scripts can create backups, keep your Paper up to date and provide plugin updates for GeyserMC and Floodgate. (You can also disable this).
-#### What you need to use the bash files:
-- You need a Minecraft [PaperMC](https://papermc.io) or [PurPur](https://purpurmc.org) server runnig in `/opt/`
-- You need a subfolder in your Minecraft Server folder called jar (Command: `mkdir jar`)
-- And you also need this addons:  
-`apt-get install screen` - screen to see  
-`apt-get install sudo` - sudo is sudo  
-`apt-get install zip` - zip to zip or unzip something  
-`apt-get install wget` - wget to upload files (like plugins)  
-`apt-get install findutils` - [Essentials](https://wiki.ubuntuusers.de/xargs/) Package  
-`apt-get install diffutils` - Yes this too  
+Furthermore these scripts can create backups, keep your Software up to date and provide plugin updates for e.g. GeyserMC and Floodgate.
   
-`dpkg -l | grep <package name>` - to see if you have the package  
-
+#### What you need to use the bash files:
+You need one of the Minecraft Software types or you didn't need anything.  
+The v2.5 scripts installs everything (exept for java) what they need to work.  
+  
+---
 ### How to install this?
 
 You can just put the files into your server files (where also your `server.propeties` are)  
-You can use this command: `wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/minecraft-server-assets-v2.3/server-start-scripts-v2.3.zip`  
-Or `wget https://t1p.de/zceh` (easyer)  
-And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close the files with `strg + k + x` on your keyboard.  
+You can use this command:  
+`wget https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5/server-start-scripts-v2.5.zip`  
+And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` you can close (and save) the files with `strg + k + x` on your keyboard.  
   
-You need `joe` istalled to edit those: `apt-get install joe`  
+You probably need `joe` istalled to edit those: `apt-get install joe`  
   
-  
-## ------------------------------------------------
-### Update V2.3
-The scripts has now more features!  
-  
-You can set your software PaperMC, PurPurMC, or for Proxy Velocity  
-- It's now easyer to configure the files!  
-- You can now tranzlate your messages in your language. (default language is english)  
-  
-This feature may come in the future:  
-- Only one configuration file, with easyer configuration.  
-- Spigot and Bungeecord support. (Bukkit will never supported here, only if many people ask.)  
-  
-  
-## ------------------------------------------------
-  
-- [X] Writing readme
-- [X] Uplad files
-- [X] Update files to 2.1 (for easyer configuring & bugg fixes)
