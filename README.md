@@ -10,7 +10,7 @@
     </a>
   
 ### Server scripts to start or stop a Minecraft server
-Start, stop and restart scripts for your Minecraft server for native use or use in systemd with Debian.  
+Start, stop and restart scripts for your Minecraft server for native use or use in systemd with Debian or Ubuntu.  
   
 ---
 ### Supported Software  
