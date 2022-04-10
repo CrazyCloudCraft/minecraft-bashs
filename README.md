@@ -42,14 +42,14 @@ You probably need `joe` istalled to edit those: `apt-get install joe`
   
 ---
 ### Todo list
-- [x] Add Support for Paper  
-- [x] Add Support for PurPur  
-- [x] Add Support for Velocity  
-- [x] Add Support for Mohist  
-- [x] Add Support for Bungeecord  
+- [x] √ Add Support for Paper   
+- [x] √ Add Support for PurPur   
+- [x] √ Add Support for Velocity   
+- [x] √ Add Support for Mohist   
+- [x] √ Add Support for Bungeecord  
 - [ ] Add Support for Spigot  
   
-- [x] Add Backup system  
+- [x] √ Add Backup system  
 - [ ] Fixing Backup system  
 - [ ] Add New Backup system to save it faster and simple  
   
