@@ -49,6 +49,7 @@ You probably need `joe` istalled to edit those: `apt-get install joe`
 - [x] √ Add Support for Bungeecord  
 - [ ] Add Support for Spigot  
   
+.
 - [x] √ Add Backup system  
 - [ ] Fixing Backup system  
 - [ ] Add New Backup system to save it faster and simple  
