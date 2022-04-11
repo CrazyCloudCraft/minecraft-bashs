@@ -53,4 +53,6 @@ You probably need `joe` istalled to edit those: `apt-get install joe`
 - [x] √ Add backup system  
 - [ ] Fixing backup system  
 - [ ] Add new backup system to save it fast and simple  
-  
+.  
+- [ ] repair bedrock support
+- [ ] adding plugin updater
