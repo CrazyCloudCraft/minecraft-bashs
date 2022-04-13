@@ -20,7 +20,7 @@ Start, stop and restart scripts for your Minecraft server for native use or use 
 | Server | [PaperMC](https://papermc.io)         
 | Proxy     | [Velocity](https://velocitypowered.com) 
 | Proxy         | [Bungeecord](https://spigotmc.org)  
-| Modded        | [MohistMC](https://mohistmc.com)  
+| Modded        | [MohistMC](https://mohistmc.com) (has issues)  
 ---
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
