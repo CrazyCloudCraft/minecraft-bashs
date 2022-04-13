@@ -42,9 +42,10 @@ And config this files with `joe start.sh` / `joe stop.sh` or `joe restart.sh` yo
   
 You probably need `joe` istalled to edit those: `apt-get install joe`  
     
-After that you just type in: `chmod +x *.sh`
+After that you just type in: `chmod +x *.sh`  
     
 Finished! You can now start/stop or restart your server with ./start.sh , ./stop.sh or restart.sh
+    
 ---
 ### Todo list
 - [x] √ Add support for Paper   
