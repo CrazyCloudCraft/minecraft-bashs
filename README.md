@@ -62,6 +62,6 @@ And after that you can start/stop or restart your server with `./start.sh` , `./
 - [ ] Add new backup system to save it fast and simple  
 .  
 - [ ] repair bedrock support
-- [ ] adding plugin updater#
-    .
+- [ ] adding plugin updater
+    .  
     - [ ] Add support for Windows users
