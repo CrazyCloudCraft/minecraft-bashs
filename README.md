@@ -55,6 +55,9 @@ And after that you can start/stop or restart your server with `./start.sh` , `./
 - [x] √ Add support for Bungeecord  
 - [ ] Add support for SpigotMC  
 - [ ] Add support for WaterfallMC
+- [ ] Add support for Minecraft
+- [ ] Add support for Forge
+- [ ] Add support for Fabric
     
 .
 - [x] √ Add backup system  
