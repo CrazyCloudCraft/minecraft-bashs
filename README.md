@@ -48,17 +48,20 @@ And after that you can start/stop or restart your server with `./start.sh` , `./
     
 ---
 ### Todo list
-- [x] √ Add support for Paper   
-- [x] √ Add support for PurPur   
-- [x] √ Add support for Velocity   
-- [x] √ Add support for Mohist   
+- [x] √ Add support for PaperMC   
+- [x] √ Add support for PurPurMC   
+- [x] √ Add support for VelocityMC   
+- [x] √ Add support for MohistMC   
 - [x] √ Add support for Bungeecord  
-- [ ] Add support for Spigot  
-  
+- [ ] Add support for SpigotMC  
+- [ ] Add support for WaterfallMC
+    
 .
 - [x] √ Add backup system  
 - [ ] Fixing backup system  
 - [ ] Add new backup system to save it fast and simple  
 .  
 - [ ] repair bedrock support
-- [ ] adding plugin updater
+- [ ] adding plugin updater#
+    .
+    - [ ] Add support for Windows users
