@@ -45,7 +45,11 @@ You probably need `joe` istalled to edit those: `apt-get install joe`
 After that you just type in: `chmod +x *.sh`  
     
 And after that you can start/stop or restart your server with `./start.sh` , `./stop.sh` or `restart.sh`
-    
+  
+## Support
+
+If you need setup help, or want to add features that aren't listed here   
+please just write an issue here! (Discord will be added soon)
 ---
 ### Todo list
 - [x] √ Add support for PaperMC   
