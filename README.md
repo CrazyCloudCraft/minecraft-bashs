@@ -46,8 +46,7 @@ After that you just type in: `chmod +x *.sh`
     
 And after that you can start/stop or restart your server with `./start.sh` , `./stop.sh` or `restart.sh`
   
-## Support  
-
+### Support  
 If you need setup help, or want to add features that aren't listed here   
 please just write an issue here! (Discord will be added soon)
 ---
