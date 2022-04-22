@@ -1,1 +1,1 @@
-
+mkdir unused && mv *~ ./unused && mv server-start-scripts-v*.zip ./unused
