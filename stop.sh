@@ -1,4 +1,6 @@
 #!/bin/bash
+# ONLY FOR READING, THIS SCIPT HERE IS NOT UP TO DATE!!!
+
 # Minecraft Server auto stop script - 
 # Made by CrazyCloudCraft 08.12.2021 https://crazycloudcraft.de
 # Configuration:
