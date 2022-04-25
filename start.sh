@@ -1,4 +1,6 @@
 #!/bin/bash
+# ONLY FOR READING, THIS SCIPT HERE IS NOT UP TO DATE!!!
+
 # Minecraft Server start script - Check if server is already started
 # Version 2.5 made by CrazyCloudCraft 03.04.2022 UTC/GMT +1 https://crazycloudcraft.de
 # Version 2.5.1 made by CrazyCloudCraft 09.04.2022 UTC/GMT +1 https://crazycloudcraft.de
