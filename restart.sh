@@ -1,4 +1,6 @@
 #!/bin/bash
+# ONLY FOR READING, THIS SCIPT HERE IS NOT UP TO DATE!!!
+
 # Made by CrazyCloudCraft 08.12.2021
 # Update v2.0.1 by CrazyCloudCraft 21.1.2022
 
