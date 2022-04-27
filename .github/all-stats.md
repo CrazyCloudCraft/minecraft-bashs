@@ -7,5 +7,5 @@
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.1.1/total?color=green&label=v2.5.1.1%20Downloads&logo=github&style=flat-square" />
     </a>
     </a>
-        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.1/total?color=green&label=v2.5.1.1%20Downloads&logo=github&style=flat-square" />
+        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.1/total?color=green&label=v2.5.1%20Downloads&logo=github&style=flat-square" />
     </a>
