@@ -49,7 +49,7 @@ And after that you can start/stop or restart your server with `./start.sh` , `./
   
 ### Support  
   
-If you need setup help, or want to add features that aren't listed here   
+If you need setup help, or want to add features that aren't listed here  
 please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/issues) ! (Discord will be added soon)
   
 ---
@@ -64,7 +64,6 @@ please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/
 - [ ] Add support for Minecraft
 - [ ] Add support for Forge
 - [ ] Add support for Fabric
-    
 .
 - [x] √ Add backup system  
 - [ ] Fixing backup system  
