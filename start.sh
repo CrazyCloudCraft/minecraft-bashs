@@ -103,7 +103,7 @@ if screen -list | grep -q "$MCNAME "; then
 fi
 
 # Change directory to server directory
-cd $LPATH
+cd $LPATH || exit
 
 # Create backup for your server
 if [ $BACKUP = "TRUE" ]; then
@@ -120,10 +120,10 @@ fi
 
 #Paper: Getting Update form your selected version.
 if [ $ASOFTWARE = "PAPER" ]; then
- cd $LPATH/jar
+ cd $LPATH/jar || exit
  rm -f version.json
  wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/ -O version.json
- LATEST=$(cat version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
+ LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
  wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/$LATEST/downloads/paper-$MAINVERSION-$LATEST.jar
  unzip -qq -t paper-$MAINVERSION-$LATEST.jar
  if [ "$?" -ne 0 ]; then
@@ -145,10 +145,10 @@ fi
 
 #PurPur: Getting Update form your selected version.
 if [ $ASOFTWARE = "PURPUR" ]; then
- cd $LPATH/jar
+ cd $LPATH/jar || exit
  rm -f version.json
  wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION -O version.json
- LATEST=$(cat version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2)
+ LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2)
  wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION/$LATEST/download -O purpur-$MAINVERSION-$LATEST.jar
  unzip -qq -t purpur-$MAINVERSION-$LATEST.jar
  if [ "$?" -ne 0 ]; then
@@ -195,7 +195,7 @@ if [ $ASOFTWARE = "VELOCITY" ]; then
  cd $LPATH/jar
  rm -f version.json
  wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT -O version.json
- LATEST=$(cat version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
+ LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
  wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT/builds/$LATEST/downloads/velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
  unzip -qq -t velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
  if [ "$?" -ne 0 ]; then
