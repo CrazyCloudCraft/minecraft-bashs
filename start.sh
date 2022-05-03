@@ -152,7 +152,7 @@ if [ "$ASOFTWARE" = "PURPUR" ]; then
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2)
  wget -q https://api.purpurmc.org/v2/purpur/"$MAINVERSION"/"$LATEST"/download -O purpur-"$MAINVERSION"-"$LATEST".jar
  unzip -qq -t purpur-"$MAINVERSION"-"$LATEST".jar
- if [ "$?" -ne 0 ]; then
+ if ! unzip -qq -t purpur-"$MAINVERSION"-"$LATEST".jar; then
   echo "Downloaded purpur-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t "$MCNAME"
  else
   diff -q purpur-"$MAINVERSION"-"$LATEST".jar ../"$MCNAME".jar >/dev/null 2>&1 
@@ -175,7 +175,7 @@ if [ "$ASOFTWARE" = "MOHIST" ]; then
  DATE=$(date +%Y.%m.%d.%H.%M.%S)
  wget -q https://mohistmc.com/api/$MAINVERSION/latest/download -O mohist-"$MAINVERSION"-"$DATE".jar
  unzip -qq -t  mohist-"$MAINVERSION"-"$DATE".jar
- if [ "$?" -ne 0 ]; then
+ if ! unzip -qq -t  mohist-"$MAINVERSION"-"$DATE".jar; then
   echo "Downloaded mohist-$MAINVERSION-$DATE.jar is corrupt. No update." | /usr/bin/logger -t "$MCNAME"
  else
   diff -q mohist-"$MAINVERSION"-"$DATE".jar ../"$MCNAME".jar >/dev/null 2>&1
@@ -199,7 +199,7 @@ if [ "$ASOFTWARE" = "VELOCITY" ]; then
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
  wget -q https://papermc.io/api/v2/projects/velocity/versions/"$MAINVERSION"-SNAPSHOT/builds/"$LATEST"/downloads/velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar
  unzip -qq -t velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar
- if [ "$?" -ne 0 ]; then
+ if ! unzip -qq -t velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar; then
   echo "Downloaded velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t "$MCNAME"
  else
   diff -q velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar ../"$MCNAME".jar >/dev/null 2>&1
@@ -222,7 +222,7 @@ if [ "$ASOFTWARE" = "BUNGEECORD" ]; then
  rm -f version.json
  wget -q https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
  unzip -qq -t BungeeCord.jar
- if [ "$?" -ne 0 ]; then
+ if ! unzip -qq -t BungeeCord.jar; then
   echo "Downloaded BungeeCord.jar No update." | /usr/bin/logger -t "$MCNAME"
  else
   diff -q BungeeCord.jar ../"$MCNAME".jar >/dev/null 2>&1
