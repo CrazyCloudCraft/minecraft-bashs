@@ -64,12 +64,9 @@ please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/
 - [ ] Add support for Minecraft
 - [ ] Add support for Forge
 - [ ] Add support for Fabric
-.
 - [x] √ Add backup system  
 - [ ] Fixing backup system  
-- [ ] Add new backup system to save it fast and simple  
-.  
+- [ ] Add new backup system to save it fast and simple   
 - [ ] repair bedrock support  
-- [ ] adding plugin updater  
-    .  
-    - [ ] Add support for Windows users
+- [ ] adding plugin updater    
+    - [ ] Add support for Windows user
