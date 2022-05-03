@@ -18,7 +18,7 @@ Start, stop and restart scripts for your Minecraft server for native use or use 
 | Type | Software
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Server   | [PurpurMC](https://purpurmc.org) 
-| Server | [PaperMC](https://papermc.io)         
+| Server   | [PaperMC](https://papermc.io)         
 | Proxy     | [Velocity](https://velocitypowered.com) 
 | Proxy         | [Bungeecord](https://spigotmc.org)  
 | Modded        | [MohistMC](https://mohistmc.com)  
