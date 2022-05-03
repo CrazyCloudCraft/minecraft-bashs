@@ -103,20 +103,20 @@ if screen -list | grep -q "$MCNAME "; then
 fi
 
 # Change directory to server directory
-cd $LPATH || exit
+cd "$LPATH" || exit
 
 # Create backup for your server
-if [ $BACKUP = "TRUE" ]; then
+if [ "$BACKUP" = "TRUE" ]; then
  if [ -f "$MCNAME.jar" ]; then
-    echo "Backing up server (to /$OPTBASE/$BPATH folder)" | /usr/bin/logger -t $MCNAME
-    cd /$OPTBASE/$BPATH && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
-    cd $LPATH
-    tar -pzcf ../$BPATH/$(date +%Y.%m.%d.%H.%M.%S).tar.gz --exclude='FaWeSnapshots/*' --exclude='unused/*' ./
+    echo "Backing up server (to /$OPTBASE/$BPATH folder)" | /usr/bin/logger -t "$MCNAME"
+    cd /"$OPTBASE"/"$BPATH" && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
+    cd "$LPATH"
+    tar -pzcf ../"$BPATH"/"$(date +%Y.%m.%d.%H.%M.%S)".tar.gz --exclude='FaWeSnapshots/*' --exclude='unused/*' ./
  fi
 fi
 
 # Clean Logfiles
-/usr/bin/find $LPATH/logs -type f -mtime +6 -delete > /dev/null 2>&1
+/usr/bin/find "$LPATH"/logs -type f -mtime +6 -delete > /dev/null 2>&1
 
 #Paper: Getting Update form your selected version.
 if [ "$ASOFTWARE" = "PAPER" ]; then
