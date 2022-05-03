@@ -16,18 +16,18 @@ MTRANZLATION="The server is not running. Starting server."
 # Script start. Do not configure this! #############################################
 
 # Build path
-CXPATH=/$OPATH/$MPATH
+CXPATH=/"$OPATH"/"$MPATH"
 
 # Check if offline
 if ! screen -list | grep -q "$MCNAME"; then
     echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m $MTRANZLATION"
     # Start server
-    /bin/bash $CXPATH/start.sh
+    /bin/bash "$CXPATH"/start.sh
     exit 0
 fi
 
 # Stop server
-/bin/bash $CXPATH/stop.sh
+/bin/bash "$CXPATH"/stop.sh
 
 # Start server
-/bin/bash $CXPATH/start.sh
+/bin/bash "$CXPATH"/start.sh
