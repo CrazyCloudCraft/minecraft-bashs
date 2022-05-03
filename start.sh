@@ -144,12 +144,12 @@ if [ "$ASOFTWARE" = "PAPER" ]; then
 fi
 
 #PurPur: Getting Update form your selected version.
-if [ $ASOFTWARE = "PURPUR" ]; then
- cd $LPATH/jar || exit
+if [ "$ASOFTWARE" = "PURPUR" ]; then
+ cd "$LPATH"/jar || exit
  rm -f version.json
- wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION -O version.json
+ wget -q https://api.purpurmc.org/v2/purpur/"$MAINVERSION" -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2)
- wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION/$LATEST/download -O purpur-$MAINVERSION-$LATEST.jar
+ wget -q https://api.purpurmc.org/v2/purpur/"$MAINVERSION"/"$LATEST"/download -O purpur-"$MAINVERSION-$LATEST.jar
  unzip -qq -t purpur-$MAINVERSION-$LATEST.jar
  if [ "$?" -ne 0 ]; then
   echo "Downloaded purpur-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
