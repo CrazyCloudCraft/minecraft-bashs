@@ -110,7 +110,7 @@ if [ "$BACKUP" = "TRUE" ]; then
  if [ -f "$MCNAME.jar" ]; then
     echo "Backing up server (to /$OPTBASE/$BPATH folder)" | /usr/bin/logger -t "$MCNAME"
     cd /"$OPTBASE"/"$BPATH" && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
-    cd "$LPATH"
+    cd "$LPATH" || exit
     tar -pzcf ../"$BPATH"/"$(date +%Y.%m.%d.%H.%M.%S)".tar.gz --exclude='FaWeSnapshots/*' --exclude='unused/*' ./
  fi
 fi
