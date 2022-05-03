@@ -126,7 +126,8 @@ if [ "$ASOFTWARE" = "PAPER" ]; then
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
  wget -q https://papermc.io/api/v2/projects/paper/versions/"$MAINVERSION"/builds/"$LATEST"/downloads/paper-"$MAINVERSION"-"$LATEST".jar
  unzip -qq -t paper-"$MAINVERSION"-"$LATEST".jar
- if [ "$?" -ne 0 ]; then
+ #if [ "$?" -ne 0 ]; then 
+ if ! unzip -qq -t paper-"$MAINVERSION"-"$LATEST".jar; then
   echo "Downloaded paper-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t "$MCNAME"
  else
   diff -q paper-"$MAINVERSION"-"$LATEST".jar ../"$MCNAME".jar >/dev/null 2>&1
