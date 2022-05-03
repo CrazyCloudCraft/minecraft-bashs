@@ -170,7 +170,7 @@ fi
 
 #Mohist: Getting Update form your selected version.
 if [ $ASOFTWARE = "MOHIST" ]; then
- cd $LPATH/jar
+ cd $LPATH/jar || exit
  DATE=$(date +%Y.%m.%d.%H.%M.%S)
  wget -q https://mohistmc.com/api/$MAINVERSION/latest/download -O mohist-$MAINVERSION-$DATE.jar
  unzip -qq -t  mohist-$MAINVERSION-$DATE.jar
@@ -192,7 +192,7 @@ fi
 
 #Velocity: Getting Update form your selected version.
 if [ $ASOFTWARE = "VELOCITY" ]; then
- cd $LPATH/jar
+ cd $LPATH/jar || exit
  rm -f version.json
  wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
@@ -217,7 +217,7 @@ fi
 
 #Bungeecord: Getting Update form your selected version.
 if [ $ASOFTWARE = "BUNGEECORD" ]; then
- cd $LPATH/jar
+ cd $LPATH/jar || exit
  rm -f version.json
  wget -q https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
  unzip -qq -t BungeeCord.jar
@@ -304,7 +304,7 @@ fi
 # Stop Bedrock edition part
 
 #Starting paper server
-cd $LPATH
+cd $LPATH || exit
 
 echo "Starting $LPATH/$MCNAME.jar" | /usr/bin/logger -t $MCNAME
 if [ $ASOFTWARE = "PAPER" ]; then
