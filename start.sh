@@ -284,18 +284,18 @@ fi
 #if [ PRUPDATEGEYSER = "TRUE" ]; then
 # cd /opt/Bungee/geyser
 # wget -q https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/bungeecord/target/Geyser-BungeeCord.jar -O Geyser-BungeeCord.jar
- unzip -qq -t Geyser-BungeeCord.jar
+# unzip -qq -t Geyser-BungeeCord.jar
 # if [ "$?" -ne 0 ]; then
-  echo "Downloaded Geyser-BungeeCord.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
- else
-  diff -q Geyser-BungeeCord.jar ../plugins/Geyser-BungeeCord.jar >/dev/null 2>&1
-  if [ "$?" -eq 1 ]; then
-   /usr/bin/find /opt/Bungee/geyser/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
-   cp Geyser-BungeeCord.jar Geyser-BungeeCord.jar.$(date +%Y.%m.%d.%H.%M.%S)
-   mv Geyser-BungeeCord.jar /opt/Bungee/plugins/Geyser-BungeeCord.jar
-   echo "Geyser-BungeeCord has been updated" | /usr/bin/logger -t $MCNAME
-  else
-   echo "No Geyser-BungeeCord update neccessary" | /usr/bin/logger -t $MCNAME
+#  echo "Downloaded Geyser-BungeeCord.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
+# else
+#  diff -q Geyser-BungeeCord.jar ../plugins/Geyser-BungeeCord.jar >/dev/null 2>&1
+#  if [ "$?" -eq 1 ]; then
+#   /usr/bin/find /opt/Bungee/geyser/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+#   cp Geyser-BungeeCord.jar Geyser-BungeeCord.jar.$(date +%Y.%m.%d.%H.%M.%S)
+#   mv Geyser-BungeeCord.jar /opt/Bungee/plugins/Geyser-BungeeCord.jar
+#   echo "Geyser-BungeeCord has been updated" | /usr/bin/logger -t $MCNAME
+#  else
+#   echo "No Geyser-BungeeCord update neccessary" | /usr/bin/logger -t $MCNAME
 #   rm Geyser-BungeeCord.jar
 #  fi
 # fi
