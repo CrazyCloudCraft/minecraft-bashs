@@ -1,6 +1,7 @@
 #!/bin/bash
 ASOFTWARE=SPIGOT
 BEDROCKSUPPORT=TRUE
+LPATH=Coding
 
 if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] && [ $BEDROCKSUPPORT = "TRUE" ]; then
 cd "$LPATH"/floodgate || exit && echo "Error #0001"
