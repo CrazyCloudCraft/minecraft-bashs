@@ -11,7 +11,7 @@
   
 ### Server scripts to start or stop a Minecraft server
 Start, stop and restart scripts for your Minecraft server for native use or use in systemd with Debian or Ubuntu.  
-  
+[![Codacy Security Scan](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master)](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml)  
 
 ---
 ### Supported Software  
