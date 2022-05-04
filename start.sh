@@ -110,7 +110,7 @@ if [ $BACKUP = "TRUE" ]; then
  if [ -f "$MCNAME.jar" ]; then
     echo "Backing up server (to /$OPTBASE/$BPATH folder)" | /usr/bin/logger -t "$MCNAME"
     cd /$OPTBASE/$BPATH && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
-    cd $LPATH || exit && echo "Error #0002"
+    cd $LPATH || exit
     tar -pzcf ../$BPATH/"$(date +%Y.%m.%d.%H.%M.%S)".tar.gz --exclude='unused/*' ./
  fi
 fi
@@ -123,10 +123,10 @@ fi
 if [ $ASOFTWARE = "PAPER" ]; then
  cd $LPATH/jar || exit
  rm -f version.json
- wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/ -O version.json
+ wget -q https://papermc.io/api/v2/projects/paper/versions/"$MAINVERSION"/ -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
- wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/$LATEST/downloads/paper-$MAINVERSION-$LATEST.jar
- unzip -qq -t paper-$MAINVERSION-$LATEST.jar
+ wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/"$LATEST"/downloads/paper-"$MAINVERSION"-"$LATEST".jar
+ unzip -qq -t paper-"$MAINVERSION"-"$LATEST".jar
  #if [ "$?" -ne 0 ]; then 
  if ! unzip -qq -t paper-$MAINVERSION-$LATEST.jar; then
   echo "Downloaded paper-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
@@ -139,7 +139,7 @@ if [ $ASOFTWARE = "PAPER" ]; then
    echo "paper-$MAINVERSION-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No paper-$MAINVERSION-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
-   rm paper-$MAINVERSION-$LATEST.jar
+   rm paper-"$MAINVERSION"-"$LATEST".jar
    rm version.json
   fi
  fi
