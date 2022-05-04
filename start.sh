@@ -183,57 +183,57 @@ if [ $ASOFTWARE = "MOHIST" ]; then
   if [ "$?" -eq 1 ]; then
    /usr/bin/find $LPATH/jar/* -type f -mtime +30 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp mohist-$MAINVERSION-$DATE.jar  mohist-$MAINVERSION-$DATE.jar.backup
-   mv mohist-"$MAINVERSION-$DATE".jar "$LPATH"/"$MCNAME".jar
-   echo "mohist-$MAINVERSION-$DATE.jar has been updated" | /usr/bin/logger -t "$MCNAME"
+   mv mohist-$MAINVERSION-$DATE.jar $LPATH/$MCNAME.jar
+   echo "mohist-$MAINVERSION-$DATE.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
-   echo "No mohist-$MAINVERSION-$DATE.jar update neccessary" | /usr/bin/logger -t "$MCNAME"
-   rm mohist-"$MAINVERSION"-"$DATE".jar
+   echo "No mohist-$MAINVERSION-$DATE.jar update neccessary" | /usr/bin/logger -t $MCNAME
+   rm mohist-$MAINVERSION-$DATE.jar
   fi
  fi
 fi
 
 #Velocity: Getting Update form your selected version.
-if [ "$ASOFTWARE" = "VELOCITY" ]; then
- cd "$LPATH"/jar || exit
+if [ $ASOFTWARE = "VELOCITY" ]; then
+ cd $LPATH/jar || exit
  rm -f version.json
- wget -q https://papermc.io/api/v2/projects/velocity/versions/"$MAINVERSION"-SNAPSHOT -O version.json
+ wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
- wget -q https://papermc.io/api/v2/projects/velocity/versions/"$MAINVERSION"-SNAPSHOT/builds/"$LATEST"/downloads/velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar
- unzip -qq -t velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar
- if ! unzip -qq -t velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar; then
-  echo "Downloaded velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t "$MCNAME"
+ wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT/builds/$LATEST/downloads/velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
+ unzip -qq -t velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
+ if ! unzip -qq -t velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar; then
+  echo "Downloaded velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar ../"$MCNAME".jar >/dev/null 2>&1
+  diff -q velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar ../$MCNAME.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t "$MCNAME"
-   cp velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar."$(date +%Y.%m.%d.%H.%M.%S)"
-   mv velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar "$LPATH"/"$MCNAME".jar
-   echo "velocity-$MAINVERSION-SNAPSHOT-$LATEST has been updated" | /usr/bin/logger -t "$MCNAME"
+   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+   cp velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar."$(date +%Y.%m.%d.%H.%M.%S)"
+   mv velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar $LPATH/$MCNAME.jar
+   echo "velocity-$MAINVERSION-SNAPSHOT-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
   else
-   echo "No velocity-$MAINVERSION-SNAPSHOT-$LATEST update neccessary" | /usr/bin/logger -t "$MCNAME"
-   rm velocity-"$MAINVERSION"-SNAPSHOT-"$LATEST".jar
+   echo "No velocity-$MAINVERSION-SNAPSHOT-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
+   rm velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
    rm version.json
   fi
  fi
 fi
 
 #Bungeecord: Getting Update form your selected version.
-if [ "$ASOFTWARE" = "BUNGEECORD" ]; then
- cd "$LPATH"/jar || exit
+if [ $ASOFTWARE = "BUNGEECORD" ]; then
+ cd $LPATH/jar || exit
  rm -f version.json
  wget -q https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
  unzip -qq -t BungeeCord.jar
  if ! unzip -qq -t BungeeCord.jar; then
-  echo "Downloaded BungeeCord.jar No update." | /usr/bin/logger -t "$MCNAME"
+  echo "Downloaded BungeeCord.jar No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q BungeeCord.jar ../"$MCNAME".jar >/dev/null 2>&1
+  diff -q BungeeCord.jar ../$MCNAME.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find "$LPATH"/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t "$MCNAME"
+   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp BungeeCord.jar BungeeCord.jar."$(date +%Y.%m.%d.%H.%M.%S)"
-   mv BungeeCord.jar "$LPATH"/"$MCNAME".jar
-   echo "BungeeCord.jar has been updated" | /usr/bin/logger -t "$MCNAME"
+   mv BungeeCord.jar $LPATH/$MCNAME.jar
+   echo "BungeeCord.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
-   echo "No BungeeCord.jar update neccessary" | /usr/bin/logger -t "$MCNAME"
+   echo "No BungeeCord.jar update neccessary" | /usr/bin/logger -t $MCNAME
    rm BungeeCord.jar
    rm -f version.json
   fi
