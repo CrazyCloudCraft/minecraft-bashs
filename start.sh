@@ -238,7 +238,8 @@ if [ $ASOFTWARE = "BUNGEECORD" ]; then
    rm -f version.json
   fi
  fi
-fi 
+fi
+
 # Start Bedrock edition part
 #Floodgate: Updateing floodgate for Minecraft PE https://geysermc.org for more information
 #if [ UPDATEFLOOD = "TRUE" ]; then
