@@ -2,9 +2,12 @@
 ASOFTWARE=SPIGOT
 BESUPPORT=TRUE
 LPATH=Coding
+mkdir -p $LPATH/plugins
+mkdir -p $LPATH/mcsys/
 
 if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] && [ $BESUPPORT = "TRUE" ]; then
- cd $LP
+ cd $LPATH/plugins || exit
+ touch floodgate-spigot.jar
  cd $LPATH/mcsys/floodgate || exit
  wget -q https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/target/floodgate-spigot.jar
  unzip -qq -t floodgate-spigot.jar
