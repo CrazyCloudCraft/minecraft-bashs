@@ -51,22 +51,3 @@ And after that you can start/stop or restart your server with `./start.sh` , `./
   
 If you need setup help, or want to add features that aren't listed here  
 please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/issues) ! (Discord will be added soon)
-  
----
-### Todo list
-- [x] √ Add support for PaperMC   
-- [x] √ Add support for PurPurMC  
-- [x] √ Add support for VelocityMC  
-- [x] √ Add support for MohistMC  
-- [x] √ Add support for Bungeecord  
-- [ ] Add support for SpigotMC  
-- [ ] Add support for WaterfallMC  
-- [ ] Add support for Minecraft  
-- [ ] Add support for Forge  
-- [ ] Add support for Fabric  
-- [x] √ Add backup system  
-- [ ] Fixing backup system  
-- [ ] Add new backup system to save it fast and simple  
-- [ ] repair bedrock support   
-- [ ] adding plugin updater  
-- [ ] Add support for Windows user  
