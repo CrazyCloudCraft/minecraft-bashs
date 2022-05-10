@@ -68,7 +68,8 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUP
   fi
  fi
 fi
-# Geyser Updater
+
+# Geyser Updater for nomal servers
 if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURPUR" ] && [ $GBESUPPORT = "TRUE" ]; then
  cd $LPATH/plugins || exit
 # touch Geyser-Spigot.jar
@@ -91,3 +92,4 @@ if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURP
   fi
  fi
 fi
+
