@@ -97,24 +97,17 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUP
   cp Geyser-BungeeCord.jar Geyser-BungeeCord.jar."$(date +%Y.%m.%d.%H.%M.%S)"
   mv Geyser-BungeeCord.jar ../../plugins/Geyser-BungeeCord.jar
    echo "Geyser for Bungeecord and Waterfall has been updated" | /usr/bin/logger -t $MCNAME
-#  else
-#   echo "No floodgate update neccessary" | /usr/bin/logger -t $MCNAME
-#   rm floodgate-bungee.jar
+# Velocity part
  if [ $ASOFTWARE = "VELOCITY" ]; then
- wget -q https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/velocity/target/Geyser-Velocity.jar
+ wget -q https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/velocity/target/Geyser-Velocity.jar
  unzip -qq -t Geyser-Velocity.jar
  if ! unzip -qq -t Geyser-Velocity.jar; then
   echo "Downloaded Geyser-Velocity is corrupt. No update." | /usr/bin/logger -t $MCNAME
-# else
-#  diff -q floodgate-spigot.jar ../../plugins/floodgate-spigot.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
   /usr/bin/find $LPATH/mcsys/geyser/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
   cp Geyser-Velocity.jar Geyser-Velocity.jar."$(date +%Y.%m.%d.%H.%M.%S)"
   mv Geyser-Velocity.jar ../../plugins/Geyser-Velocity.jar
    echo "Geyser for Velocity has been updated" | /usr/bin/logger -t $MCNAME
-#  else
-#   echo "No floodgate update neccessary" | /usr/bin/logger -t $MCNAME
-#   rm floodgate-bungee.jar
   fi
  fi
 fi
