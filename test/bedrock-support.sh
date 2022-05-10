@@ -3,11 +3,12 @@ ASOFTWARE=SPIGOT
 BESUPPORT=TRUE
 LPATH=Coding
 mkdir -p $LPATH/plugins
-
+mkdir -p $LPATH/mcsys
 # Floodgate for Spigot
 if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURPUR" ] && [ $BESUPPORT = "TRUE" ]; then
  cd $LPATH/plugins || exit
  touch floodgate-spigot.jar
+ mkdir -p $LPATH/mcsys/floodgate
  cd $LPATH/mcsys/floodgate || exit
  wget -q https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/target/floodgate-spigot.jar
  unzip -qq -t floodgate-spigot.jar
@@ -30,6 +31,7 @@ fi
 # Floodgate for Proxy
 if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUPPORT = "TRUE" ]; then
  cd $LPATH/plugins || exit
+ mkdir -p $LPATH/mcsys/floodgate
  cd $LPATH/mcsys/floodgate || exit
  if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "WATERFALL" ]; then
  wget -q https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/bungee/target/floodgate-bungee.jar
