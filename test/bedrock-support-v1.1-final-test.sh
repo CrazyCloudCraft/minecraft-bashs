@@ -34,6 +34,24 @@ if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURP
  fi
 fi
 
+# Geyser Updater for nomal servers
+if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURPUR" ] && [ $GBESUPPORT = "TRUE" ]; then
+ cd $LPATH/plugins || exit
+ mkdir -p $LPATH/mcsys/geyser
+ cd $LPATH/mcsys/geyser || exit
+ wget -q https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/target/Geyser-Spigot.jar
+ unzip -qq -t Geyser-Spigot.jar
+ if ! unzip -qq -t Geyser-Spigot.jar; then
+  echo "Downloaded Geyser Default is corrupt. No update." | /usr/bin/logger -t $MCNAME
+  if [ "$?" -eq 1 ]; then
+  /usr/bin/find $LPATH/mcsys/geyser/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+  cp Geyser-Spigot.jar Geyser-Spigot.jar."$(date +%Y.%m.%d.%H.%M.%S)"
+  mv Geyser-Spigot.jar ../../plugins/Geyser-Spigot.jar
+   echo "Geyser Default has been updated" | /usr/bin/logger -t $MCNAME
+  fi
+ fi
+fi
+
 # Floodgate for Proxy
 if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUPPORT = "TRUE" ]; then
  cd $LPATH/plugins || exit
@@ -60,24 +78,6 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUP
   cp floodgate-velocity.jar floodgate-velocity.jar."$(date +%Y.%m.%d.%H.%M.%S)"
   mv floodgate-velocity.jar ../../plugins/floodgate-velocity.jar
    echo "floodgate for velocity has been updated" | /usr/bin/logger -t $MCNAME
-  fi
- fi
-fi
-
-# Geyser Updater for nomal servers
-if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURPUR" ] && [ $GBESUPPORT = "TRUE" ]; then
- cd $LPATH/plugins || exit
- mkdir -p $LPATH/mcsys/geyser
- cd $LPATH/mcsys/geyser || exit
- wget -q https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/target/Geyser-Spigot.jar
- unzip -qq -t Geyser-Spigot.jar
- if ! unzip -qq -t Geyser-Spigot.jar; then
-  echo "Downloaded Geyser Default is corrupt. No update." | /usr/bin/logger -t $MCNAME
-  if [ "$?" -eq 1 ]; then
-  /usr/bin/find $LPATH/mcsys/geyser/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
-  cp Geyser-Spigot.jar Geyser-Spigot.jar."$(date +%Y.%m.%d.%H.%M.%S)"
-  mv Geyser-Spigot.jar ../../plugins/Geyser-Spigot.jar
-   echo "Geyser Default has been updated" | /usr/bin/logger -t $MCNAME
   fi
  fi
 fi
