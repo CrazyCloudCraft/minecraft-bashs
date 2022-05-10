@@ -3,9 +3,9 @@ ASOFTWARE=SPIGOT
 BESUPPORT=TRUE
 LPATH=Coding
 mkdir -p $LPATH/plugins
-mkdir -p $LPATH/mcsys/
 
-if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] && [ $BESUPPORT = "TRUE" ]; then
+# Floodgate for Spigot
+if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURPUR" ] && [ $BESUPPORT = "TRUE" ]; then
  cd $LPATH/plugins || exit
  touch floodgate-spigot.jar
  cd $LPATH/mcsys/floodgate || exit
@@ -23,6 +23,29 @@ if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] && [ $BESUPPORT = "TRUE
   else
    echo "No floodgate update neccessary" | /usr/bin/logger -t $MCNAME
    rm floodgate-spigot.jar
+  fi
+ fi
+fi
+
+# Floodgate for Proxy
+if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUPPORT = "TRUE" ]; then
+ cd $LPATH/plugins || exit
+ cd $LPATH/mcsys/floodgate || exit
+ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "WATERFALL" ]; then
+ wget -q https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/bungee/target/floodgate-bungee.jar
+ unzip -qq -t floodgate-bungee.jar
+ if ! unzip -qq -t floodgate-bungee.jar; then
+  echo "Downloaded floodgate is corrupt. No update." | /usr/bin/logger -t $MCNAME
+# else
+#  diff -q floodgate-spigot.jar ../../plugins/floodgate-spigot.jar >/dev/null 2>&1
+  if [ "$?" -eq 1 ]; then
+  /usr/bin/find $LPATH/mcsys/floodgate/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+  cp floodgate-bungee.jar floodgate-bungee.jar."$(date +%Y.%m.%d.%H.%M.%S)"
+  mv floodgate-bungee.jar ../../plugins/floodgate-bungee.jar
+   echo "floodgate has been updated" | /usr/bin/logger -t $MCNAME
+#  else
+#   echo "No floodgate update neccessary" | /usr/bin/logger -t $MCNAME
+#   rm floodgate-bungee.jar
   fi
  fi
 fi
