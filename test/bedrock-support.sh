@@ -46,6 +46,21 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUP
 #  else
 #   echo "No floodgate update neccessary" | /usr/bin/logger -t $MCNAME
 #   rm floodgate-bungee.jar
+ if [ $ASOFTWARE = "VELOCITY" ]; then
+ wget -q https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/bungee/target/floodgate-bungee.jar
+ unzip -qq -t floodgate-bungee.jar
+ if ! unzip -qq -t floodgate-bungee.jar; then
+  echo "Downloaded floodgate is corrupt. No update." | /usr/bin/logger -t $MCNAME
+# else
+#  diff -q floodgate-spigot.jar ../../plugins/floodgate-spigot.jar >/dev/null 2>&1
+  if [ "$?" -eq 1 ]; then
+  /usr/bin/find $LPATH/mcsys/floodgate/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+  cp floodgate-bungee.jar floodgate-bungee.jar."$(date +%Y.%m.%d.%H.%M.%S)"
+  mv floodgate-bungee.jar ../../plugins/floodgate-bungee.jar
+   echo "floodgate has been updated" | /usr/bin/logger -t $MCNAME
+#  else
+#   echo "No floodgate update neccessary" | /usr/bin/logger -t $MCNAME
+#   rm floodgate-bungee.jar
   fi
  fi
 fi
