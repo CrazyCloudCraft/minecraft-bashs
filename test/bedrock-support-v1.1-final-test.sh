@@ -83,7 +83,7 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] && [ $BESUPPORT 
 fi
 
 # Geyser for Proxy
-if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUPPORT = "TRUE" ]; then
+if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] && [ $BESUPPORT = "TRUE" ]; then
  cd $LPATH/plugins || exit
  mkdir -p $LPATH/mcsys/geyser
  cd $LPATH/mcsys/geyser || exit
