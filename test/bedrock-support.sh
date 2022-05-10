@@ -1,8 +1,18 @@
 #!/bin/bash
+# What software do you use? (Here are also Waterfall and Spigot supported)
 ASOFTWARE=SPIGOT
+# Do you want Floodgate for connections without login to java Edition?
 BESUPPORT=TRUE
+# Do you want GeyserMC for Bedrock connection?
 GBESUPPORT=TRUE
-LPATH=Coding
+# Pathes
+TPATH=Server
+WPATH=opt
+
+# Sript start Do NOT EDIT THIS HERE ! ! ! ! .......
+
+
+LPATH=/$WPATH/$TPATH/
 mkdir -p $LPATH/plugins
 mkdir -p $LPATH/mcsys
 
