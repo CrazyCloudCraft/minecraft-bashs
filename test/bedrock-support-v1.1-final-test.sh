@@ -67,6 +67,8 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] && [ $BESUPPORT 
   cp floodgate-bungee.jar floodgate-bungee.jar."$(date +%Y.%m.%d.%H.%M.%S)"
   mv floodgate-bungee.jar ../../plugins/floodgate-bungee.jar
    echo "floodgate for Bungeecord and Waterfall has been updated" | /usr/bin/logger -t $MCNAME
+  fi
+ fi
 # Velocity part
  if [ $ASOFTWARE = "VELOCITY" ]; then
  wget -q https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/velocity/target/floodgate-velocity.jar
@@ -97,6 +99,8 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] && [ $BESUPPORT 
   cp Geyser-BungeeCord.jar Geyser-BungeeCord.jar."$(date +%Y.%m.%d.%H.%M.%S)"
   mv Geyser-BungeeCord.jar ../../plugins/Geyser-BungeeCord.jar
    echo "Geyser for Bungeecord and Waterfall has been updated" | /usr/bin/logger -t $MCNAME
+  fi
+ fi
 # Velocity part
  if [ $ASOFTWARE = "VELOCITY" ]; then
  wget -q https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/velocity/target/Geyser-Velocity.jar
