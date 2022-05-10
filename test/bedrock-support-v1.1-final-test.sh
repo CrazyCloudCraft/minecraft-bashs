@@ -111,3 +111,10 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ && [ $BESUP
   fi
  fi
 fi
+
+# Error for Mod Servers
+if [ $ASOFTWARE = "FORGE" ] || [ $ASOFTWARE = "MOHIST" ] || [ $ASOFTWARE = "FABRIC" ] || [ $ASOFTWARE = "MINECRAFT" ] && [ $BESUPPORT = "TRUE" ]; then
+echo -e "Bedrock support doesn't work on this software! Please use an other sofware or disable Bedrock support."
+fi
+
+exit 1
