@@ -1,4 +1,5 @@
 #!/bin/bash
+# READY FOR TESTING
 # Software type
 ASOFTWARE=SPIGOT
 # The Minecraft Version
