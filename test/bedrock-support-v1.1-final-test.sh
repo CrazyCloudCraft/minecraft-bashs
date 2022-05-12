@@ -26,7 +26,7 @@ if [ $ASOFTWARE = "PAPER" ] || [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "PURP
  if ! unzip -qq -t floodgate-spigot.jar; then
   echo "Downloaded floodgate default is corrupt. No update." | /usr/bin/logger -t $MCNAME
   if [ "$?" -eq 1 ]; then
-  /usr/bin/find $LPATH/mcsys/floodgate/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+  /usr/bin/find $LPATH/mcsys/floodgate/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
   cp floodgate-spigot.jar floodgate-spigot.jar."$(date +%Y.%m.%d.%H.%M.%S)"
   mv floodgate-spigot.jar ../../plugins/floodgate-spigot.jar
    echo "floodgate default has been updated" | /usr/bin/logger -t $MCNAME
