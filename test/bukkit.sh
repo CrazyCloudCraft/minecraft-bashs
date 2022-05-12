@@ -24,10 +24,10 @@ if [ $ASOFTWARE = "BUKKIT" ]; then
    cd ../build || exit
    cp BuildTools.jar ../spitool/BuildTools.jar
    java -jar BuildTools.jar --rev $MAINVERSION --compile craftbukkit
-   cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)" $LPATH/$MCNAME.jar
-   mv spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
+   cp ./BuildTools/craftbukkit-$MAINVERSION.jar ./craftbukkit-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
+   mv ./BuildTools/craftbukkit-$MAINVERSION.jar $LPATH/$MCNAME.jar
    rm -r BuildTools
-   echo "spigot-$MAINVERSION.jar has been updated" | /usr/bin/logger -t $MCNAME
+   echo "craftbukkit-$MAINVERSION.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No BuildTools.jar update neccessary" | /usr/bin/logger -t $MCNAME
    rm BuildTools.jar
