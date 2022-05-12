@@ -1,4 +1,8 @@
 #!/bin/bash
+# Software type
+ASOFTWARE=SPIGOT
+# The Minecraft Version
+MAINVERSION=1.18.2
 
 #Spigot: Getting Update form your selected version.
 if [ $ASOFTWARE = "SPIGOT" ]; then
