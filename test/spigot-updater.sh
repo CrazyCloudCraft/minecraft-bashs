@@ -3,22 +3,27 @@
 #Spigot: Getting Update form your selected version.
 if [ $ASOFTWARE = "SPIGOT" ]; then
  mkdir -p $LPATH/mcsys/build
+ mkdir -p $LPATH/mcsys/spitool
  cd $LPATH/mcsys/build || exit
  wget -q https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
  unzip -qq -t BuildTools.jar
- if ! unzip -qq -t paper-$MAINVERSION-$LATEST.jar; then
-  echo "Downloaded paper-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
+ if ! unzip -qq -t BuildTools.jar; then
+  echo "Downloaded BuildTools.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q paper-$MAINVERSION-$LATEST.jar ../$MCNAME.jar >/dev/null 2>&1
+  diff -q BuildTools.jar ../spitool/BuildTools.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
-   cp paper-$MAINVERSION-$LATEST.jar paper-$MAINVERSION-$LATEST.jar."$(date +%Y.%m.%d.%H.%M.%S)"
-   mv paper-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+   cd ../spitool/ || exit
+   mv BuildTools.jar BuildTools.jar"$(date +%Y.%m.%d.%H.%M.%S)"
+   cd ../build || exit
+   cp BuildTools.jar ../spitool/BuildTools.jar
+   java -jar BuildTools.jar --rev $MAINVERSION
+   cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)" $LPATH/$MCNAME.jar
+   mv spigot.jar $LPATH/$MCNAME.jar
    echo "paper-$MAINVERSION-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
   else
-   echo "No paper-$MAINVERSION-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
-   rm paper-$MAINVERSION-$LATEST.jar
-   rm version.json
+   echo "No BuildTools.jar update neccessary" | /usr/bin/logger -t $MCNAME
+   rm BuildTools.jar
   fi
  fi
 fi
