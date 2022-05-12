@@ -24,8 +24,8 @@ if [ $ASOFTWARE = "SPIGOT" ]; then
    cd ../build || exit
    cp BuildTools.jar ../spitool/BuildTools.jar
    java -jar BuildTools.jar --rev $MAINVERSION
-   cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)" $LPATH/$MCNAME.jar
-   mv spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
+   cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
+   mv ./BuildTools/spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
    rm -r BuildTools
    echo "spigot-$MAINVERSION.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
