@@ -6,7 +6,7 @@ ASOFTWARE=BUKKIT
 MAINVERSION=1.18.2
 
 #Spigot: Getting Update form your selected version.
-if [ $ASOFTWARE = "SPIGOT" ]; then
+if [ $ASOFTWARE = "BUKKIT" ]; then
  mkdir -p $LPATH/mcsys/build
  mkdir -p $LPATH/mcsys/spitool
  cd $LPATH/mcsys/build || exit
@@ -23,7 +23,7 @@ if [ $ASOFTWARE = "SPIGOT" ]; then
    mv BuildTools.jar BuildTools.jar"$(date +%Y.%m.%d.%H.%M.%S)"
    cd ../build || exit
    cp BuildTools.jar ../spitool/BuildTools.jar
-   java -jar BuildTools.jar --rev $MAINVERSION
+   java -jar BuildTools.jar --rev $MAINVERSION --compile craftbukkit
    cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)" $LPATH/$MCNAME.jar
    mv spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
    rm -r BuildTools
