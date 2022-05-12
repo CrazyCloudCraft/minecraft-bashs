@@ -1,5 +1,5 @@
 #!/bin/bash
-# READY FOR TESTING
+# READY FOR TESTING CrazyCloudCraft Argantiu
 # Software type
 ASOFTWARE=SPIGOT
 # The Minecraft Version
