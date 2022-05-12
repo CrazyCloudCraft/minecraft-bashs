@@ -4,12 +4,8 @@
 if [ $ASOFTWARE = "SPIGOT" ]; then
  mkdir -p $LPATH/mcsys/build
  cd $LPATH/mcsys/build || exit
-#  https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
- wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/ -O version.json
- LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
- wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/$LATEST/downloads/paper-$MAINVERSION-$LATEST.jar
- unzip -qq -t paper-$MAINVERSION-$LATEST.jar
- #if [ "$?" -ne 0 ]; then 
+ wget -q https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+ unzip -qq -t BuildTools.jar
  if ! unzip -qq -t paper-$MAINVERSION-$LATEST.jar; then
   echo "Downloaded paper-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
