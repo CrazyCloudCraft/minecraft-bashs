@@ -21,7 +21,7 @@ if [ $ASOFTWARE = "SPIGOT" ]; then
    /usr/bin/find $LPATH/mcsys/build/* -type f -mtime +10 -delete 2>&1 #| /usr/bin/logger -t $MCNAME
    /usr/bin/find $LPATH/mcsys/spitool/* -type f -mtime +10 -delete 2>&1 #| /usr/bin/logger -t $MCNAME
    cd $LPATH/mcsys/build || exit
-   cp BuildTools.jar $LPATH/mcsys/spitool/BuildTools.jar
+   cp BuildTools.jar ../spitool/BuildTools.jar
    java -jar BuildTools.jar --rev $MAINVERSION
    cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
    mv ./BuildTools/spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
