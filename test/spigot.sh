@@ -4,7 +4,8 @@
 ASOFTWARE=SPIGOT
 # The Minecraft Version
 MAINVERSION=1.18.2
-
+MCNAME=mctest15
+LPATH=/opt/test
 #Spigot: Getting Update form your selected version.
 if [ $ASOFTWARE = "SPIGOT" ]; then
  mkdir -p $LPATH/mcsys/build
