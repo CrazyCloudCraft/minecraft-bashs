@@ -51,7 +51,8 @@ chmod +x *.sh
 ``` 
     
 And after that you can start/stop or restart your server with ```./start.sh``` , ```./stop.sh``` or ```./restart.sh```
-  
+
+### Easy Setup
 Combiend command: 
 ```
 wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5.1.1/server-start-scripts-v2.5.1.1.zip && apt-get install zip && unzip server-start-scripts-*.zip && chmod +x *.sh && apt-get install joe && rm server-start-scripts-*.zip
