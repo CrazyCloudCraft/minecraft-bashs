@@ -39,7 +39,7 @@ Or you take the
 ## Easy Setup
 Go into your server folders and paste this:
 ```
-wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5.1.1/server-start-scripts-v2.5.1.1.zip && apt-get -qq install zip && unzip server-start-scripts-*.zip && chmod +x stop.sh && chmod +x start.sh && chmod +x restart.sh && apt-get -qq install joe && rm server-start-scripts-*.zip && echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Setup finished!" && echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Please edit now the .sh files with joe"
+wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5.1.1/server-start-scripts-v2.5.1.1.zip && apt-get -qq install zip && unzip -qq server-start-scripts-*.zip && chmod +x stop.sh && chmod +x start.sh && chmod +x restart.sh && apt-get -qq install joe && rm server-start-scripts-*.zip && echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Setup finished!" && echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Please edit now the .sh files with joe" && ls -altr
 ```
 Then Edit the files with `joe start.sh` , `joe stop.sh` , `joe restart.sh`  
 After that, you are ready to start with `./start.sh`  
