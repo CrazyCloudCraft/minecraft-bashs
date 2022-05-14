@@ -18,4 +18,4 @@ chmod +x *.sh
     
 And after that you can start/stop or restart your server with ```./start.sh``` , ```./stop.sh``` or ```./restart.sh```
 
-[<- Back](github.com/CrazyCloudCraft/minecraft-bashs)
+[<- Back](https://github.com/CrazyCloudCraft/minecraft-bashs)
