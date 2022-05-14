@@ -41,7 +41,7 @@ Go into your server folders and paste this:
 ```
 wget -q https://t1p.de/qjqgw -O server_installer-v1.0.sh && chmod +x server_installer-v1.0.sh && ./server_installer-v1.0.sh
 ```
-Then Edit the files with `joe start.sh` , `joe stop.sh` , `joe restart.sh`  
+Then edit the files with `joe start.sh` , `joe stop.sh` , `joe restart.sh`  
 After that, you are ready to start with `./start.sh`  
   
 ### Support  
