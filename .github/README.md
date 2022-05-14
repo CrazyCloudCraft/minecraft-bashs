@@ -41,8 +41,8 @@ Combiend command:
 ```
 wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5.1.1/server-start-scripts-v2.5.1.1.zip && apt-get install zip && unzip server-start-scripts-*.zip && chmod +x *.sh && apt-get install joe && rm server-start-scripts-*.zip
 ```
-Then Edit the files with `joe start.sh` , `joe stop.sh` , `joe restart.sh`
-After that, you are ready to start with `./start.sh`
+Then Edit the files with `joe start.sh` , `joe stop.sh` , `joe restart.sh`  
+After that, you are ready to start with `./start.sh`  
   
 ### Support  
   
