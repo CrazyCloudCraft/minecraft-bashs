@@ -37,7 +37,7 @@ The v2.5 scripts installs everything (exept for java) what they need to work.
 You can take the [difficult way here](https://github.com/CrazyCloudCraft/minecraft-bashs/blob/master/.github/setup.md)  
 Or you take the  
 ## Easy Setup
-Combiend command: 
+Go into your server folders and paste this:
 ```
 wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/v2.5.1.1/server-start-scripts-v2.5.1.1.zip && apt-get install zip && unzip server-start-scripts-*.zip && chmod +x *.sh && apt-get install joe && rm server-start-scripts-*.zip
 ```
