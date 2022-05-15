@@ -1,6 +1,6 @@
 #!/bin/bash
 # Minecraft Server auto stop script - 
-# Version 2.5.1 Made by CrazyCloudCraft 24.04.2022 https://crazycloudcraft.de
+# Version 2.5.2.0 Made by CrazyCloudCraft 15.05.2022 https://crazycloudcraft.de
 # Configuration:
 
 # What jar and screen name does your Minecraft Server have?
