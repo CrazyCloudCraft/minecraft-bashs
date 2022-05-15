@@ -9,9 +9,9 @@ if ! screen -list | grep -q "$MCNAME"; then
   exit 1
 fi
 
-# Stop the server[A
+# Stop the server
 echo -e "$PREFIX $NTRANZLATION"
-echo "Notification: Stopping $DISPLAYNAME server ..." | /usr/bin/logger -t $MCNAME
+echo -e "$PREFIX $NTRANZLATION" | /usr/bin/logger -t $MCNAME
 
 # Start countdown notice on server
 screen -Rd $MCNAME -X stuff "say Server is stopping...$(printf '\r')"
