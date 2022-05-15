@@ -10,7 +10,8 @@ mkdir -p $LPATH
 # Install depencies
 touch $MCNAME.jar
 mkdir -p $LPATH/mcsys/jar
-mkdir -p $LPATH/unused 
+mkdir -p $LPATH/unused
+mkdir -p $LPATH/mcsys/updater
 #
  if ! command -v joe &> /dev/null
  then
@@ -59,9 +60,14 @@ mkdir -p $LPATH/unused
      apt-get install rpl -y
      echo "rpl installed"
  fi 
+# Updateing everything...
+cd $LPATH/mcsys/updater || exit 1
+wget -q https://raw.githubusercontent.com/Argantiu/system-api/main/api/v1/updater.sh -O updater.sh
+/bin/bash $LPATH/mcsys/be-updater.sh
+
 # Accept eula.txt
 sed -i 's/false/true/g' $LPATH/eula.txt >/dev/null 2>&1
-
+restart-script: ./start.sh
 # Testing Dependencies
 if screen -list | grep -q "$MCNAME"; then
     echo "Server has already started! Use screen -r $MCNAME to open it"
@@ -87,12 +93,12 @@ fi
 /usr/bin/find $LPATH/logs -type f -mtime +6 -delete > /dev/null 2>&1
 
 # Bedrock Part
-if [ $BEUPDATE = TRUE ]; then
- echo -e "$MPREFIX Updateing floodgate"
+if [ $BEUPDATE = TRUE ] || [ $GBEUPDATE = TRUE ]; then
+ echo -e "$MPREFIX Updateing Bedrock"
  cd $LPATH/mcsys || exit 1
  wget -q https://raw.githubusercontent.com/Argantiu/system-api/main/api/v1/be-updater.sh -O be-updater.sh
  chmod +x be-updater.sh
- ./be-updater.sh
+ /bin/bash $LPATH/mcsys/be-updater.sh
 fi
 #Paper: Getting Update form your selected version.
 if [ $ASOFTWARE = "PAPER" ]; then
