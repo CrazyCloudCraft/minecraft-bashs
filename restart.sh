@@ -1,33 +1,23 @@
 #!/bin/bash
 # Made by CrazyCloudCraft
-# Update v2.5.2.0 on 15.05.2022
-
-# Configuration:
-# Set your server path. Where is your paper.jar?
-MPATH=Paper
-# Where are your servers in (like home or opt directory)
-OPATH=opt
-# What jar and screen name does your Minecraft server have?
-MCNAME=paper
-# Tranzlation:
-MTRANZLATION="The server is not running. Starting server."
+# Update v2.5.2.0 on 05/15/2022 made by Argantiu
 
 
-# Script start. Do not configure this! #############################################
+# Do not configure this scipts!
 
 # Build path
-CXPATH=/$OPATH/$MPATH
+LPATH=/$OPTBASE/$SERVERBASE
 
 # Check if offline
 if ! screen -list | grep -q "$MCNAME"; then
-    echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m $MTRANZLATION"
+    echo -e "$MPREFIX $MTRANZLATION"
     # Start server
-    /bin/bash $CXPATH/start.sh
+    /bin/bash $LPATH/mcsys/start.sh
     exit 0
 fi
 
 # Stop server
-/bin/bash $CXPATH/stop.sh
+/bin/bash $LPATH/mcsys/stop.sh
 
 # Start server
-/bin/bash $CXPATH/start.sh
+/bin/bash $LPATH/mcsys/start.sh
