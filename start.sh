@@ -1,13 +1,13 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
-# Version 2.5.1.1 made by CrazyCloudCraft 24.04.2022 UTC/GMT +1 https://crazycloudcraft.de
+# Version 2.5.2.0 made by CrazyCloudCraft 15.05.2022 UTC/GMT +1 https://crazycloudcraft.de
 
 # Configuration:
 # Define your Minecraft version like 1.18.2 based on your Software
 # For Velocity you set the latest PROXY version ( in the moment: 3.1.2 (just look on https://papermc.io/downloads#Velocity )
 MAINVERSION=1.18.2
 # What type of Server Software do you use? 
-# You can use: PAPER, PURPUR, MOHIST, VELOCITY, BUNGEECORD 
+# You can use: PAPER, PURPUR, MOHIST, VELOCITY, BUNGEECORD, SPIGOT, BUKKIT
 ASOFTWARE=PAPER
 # Set your folder where the subfolders of your server shall run
 OPTBASE=opt
@@ -24,16 +24,11 @@ RAM=4G
 # Name of your java executable (Default java) e.g.: JAVABIN=/usr/bin/java
 JAVABIN=java17
 
-# DISABLED because of issues (will be fixed with update 2.5.2)
-
-# Minecraft Bedrock (PE)
-# Do you need Floodgate?
-#UPDATEFLOOD=FALSE
-# Do you need Geyser?
-#UPDATEGEYSER=FALSE
-# Do you need Geyser for Proxy
-#PRUPDATEGEYSER=FALSE
-
+# Get Bedrock Updater? (in mcsys/be-updater.sh)
+BEUPDATE=TRUE
+# Geyser too? Because you didn't need it, 
+# if this server is connected with an proxy
+GBESUPPORT=TRUE
 
 # Script start: Do not change after here ###############################################
 
@@ -103,14 +98,15 @@ if screen -list | grep -q "$MCNAME"; then
 fi
 
 # Change directory to server directory
-cd $LPATH || exit
+cd $LPATH || exit 1
 
 # Create backup for your server
 if [ $BACKUP = "TRUE" ]; then
  if [ -f "$MCNAME.jar" ]; then
+    echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Create Backup..."
     echo "Backing up server (to /$OPTBASE/$BPATH folder)" | /usr/bin/logger -t $MCNAME
     cd /$OPTBASE/$BPATH && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
-    cd $LPATH || exit
+    cd $LPATH || exit 1
     tar -pzcf ../$BPATH/"$(date +%Y.%m.%d.%H.%M.%S)".tar.gz --exclude='unused/*' ./
  fi
 fi
@@ -119,23 +115,23 @@ fi
 # Clean Logfiles
 /usr/bin/find $LPATH/logs -type f -mtime +6 -delete > /dev/null 2>&1
 
+
 #Paper: Getting Update form your selected version.
 if [ $ASOFTWARE = "PAPER" ]; then
- cd $LPATH/jar || exit
+ cd $LPATH/mcsys/jar || exit 1
  rm -f version.json
  wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/ -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
- wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/$LATEST/downloads/paper-$MAINVERSION-$LATEST.jar
+ wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/$LATEST/downloads/paper-$MAINVERSION-$LATEST.jar -O paper-$MAINVERSION-$LATEST.jar
  unzip -qq -t paper-$MAINVERSION-$LATEST.jar
- #if [ "$?" -ne 0 ]; then 
- if ! unzip -qq -t paper-$MAINVERSION-$LATEST.jar; then
+ if [ "$?" -ne 0 ]; then
   echo "Downloaded paper-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q paper-$MAINVERSION-$LATEST.jar ../$MCNAME.jar >/dev/null 2>&1
+  diff -q paper-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp paper-$MAINVERSION-$LATEST.jar paper-$MAINVERSION-$LATEST.jar."$(date +%Y.%m.%d.%H.%M.%S)"
    mv paper-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    echo "paper-$MAINVERSION-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No paper-$MAINVERSION-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
@@ -147,20 +143,20 @@ fi
 
 #PurPur: Getting Update form your selected version.
 if [ $ASOFTWARE = "PURPUR" ]; then
- cd $LPATH/jar || exit
+ cd $LPATH/mcsys/jar || exit 1
  rm -f version.json
  wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2)
  wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION/$LATEST/download -O purpur-$MAINVERSION-$LATEST.jar
  unzip -qq -t purpur-$MAINVERSION-$LATEST.jar
- if ! unzip -qq -t purpur-$MAINVERSION-$LATEST.jar; then
+ if [ "$?" -ne 0 ]; then
   echo "Downloaded purpur-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q purpur-$MAINVERSION-$LATEST.jar ../$MCNAME.jar >/dev/null 2>&1 
+  diff -q purpur-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar >/dev/null 2>&1 
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp purpur-$MAINVERSION-$LATEST.jar purpur-$MAINVERSION-$LATEST.jar."$(date +%Y.%m.%d.%H.%M.%S)"
    mv purpur-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    echo "purpur-$MAINVERSION-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No purpur-$MAINVERSION-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
@@ -172,18 +168,18 @@ fi
 
 #Mohist: Getting Update form your selected version.
 if [ $ASOFTWARE = "MOHIST" ]; then
- cd $LPATH/jar || exit
+ cd $LPATH/mcsys/jar || exit 1
  DATE=$(date +%Y.%m.%d.%H.%M.%S)
  wget -q https://mohistmc.com/api/$MAINVERSION/latest/download -O mohist-$MAINVERSION-$DATE.jar
  unzip -qq -t  mohist-$MAINVERSION-$DATE.jar
- if ! unzip -qq -t  mohist-$MAINVERSION-$DATE.jar; then
+ if [ "$?" -ne 0 ]; then
   echo "Downloaded mohist-$MAINVERSION-$DATE.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q mohist-$MAINVERSION-$DATE.jar ../$MCNAME.jar >/dev/null 2>&1
+  diff -q mohist-$MAINVERSION-$DATE.jar $LPATH/$MCNAME.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp mohist-$MAINVERSION-$DATE.jar  mohist-$MAINVERSION-$DATE.jar.backup
    mv mohist-$MAINVERSION-$DATE.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    echo "mohist-$MAINVERSION-$DATE.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No mohist-$MAINVERSION-$DATE.jar update neccessary" | /usr/bin/logger -t $MCNAME
@@ -194,20 +190,20 @@ fi
 
 #Velocity: Getting Update form your selected version.
 if [ $ASOFTWARE = "VELOCITY" ]; then
- cd $LPATH/jar || exit
+ cd $LPATH/mcsys/jar || exit 1
  rm -f version.json
  wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
- wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT/builds/$LATEST/downloads/velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
+ wget -q https://papermc.io/api/v2/projects/velocity/versions/$MAINVERSION-SNAPSHOT/builds/$LATEST/downloads/velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar -O velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
  unzip -qq -t velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar
- if ! unzip -qq -t velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar; then
+ if [ "$?" -ne 0 ]; then
   echo "Downloaded velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar ../$MCNAME.jar >/dev/null 2>&1
+  diff -q velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar $LPATH/$MCNAME.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar."$(date +%Y.%m.%d.%H.%M.%S)"
    mv velocity-$MAINVERSION-SNAPSHOT-$LATEST.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    echo "velocity-$MAINVERSION-SNAPSHOT-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No velocity-$MAINVERSION-SNAPSHOT-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
@@ -219,18 +215,18 @@ fi
 
 #Bungeecord: Getting Update form your selected version.
 if [ $ASOFTWARE = "BUNGEECORD" ]; then
- cd $LPATH/jar || exit
+ cd $LPATH/mcsys/jar || exit 1
  rm -f version.json
  wget -q https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
  unzip -qq -t BungeeCord.jar
- if ! unzip -qq -t BungeeCord.jar; then
-  echo "Downloaded BungeeCord.jar No update." | /usr/bin/logger -t $MCNAME
+ if [ "$?" -ne 0 ]; then
+  echo "Downloaded BungeeCord.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
  else
-  diff -q BungeeCord.jar ../$MCNAME.jar >/dev/null 2>&1
+  diff -q BungeeCord.jar $LPATH/$MCNAME.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
-   /usr/bin/find $LPATH/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    cp BungeeCord.jar BungeeCord.jar."$(date +%Y.%m.%d.%H.%M.%S)"
    mv BungeeCord.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    echo "BungeeCord.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No BungeeCord.jar update neccessary" | /usr/bin/logger -t $MCNAME
@@ -241,7 +237,7 @@ if [ $ASOFTWARE = "BUNGEECORD" ]; then
 fi
 
 #Starting paper server
-cd $LPATH || exit
+cd $LPATH || exit 1
 
 echo "Starting $LPATH/$MCNAME.jar" | /usr/bin/logger -t $MCNAME
 if [ $ASOFTWARE = "PAPER" ]; then
