@@ -38,7 +38,8 @@ mkdir -p $LPATH
 
 # Install depencies
 touch $MCNAME.jar
-mkdir -p $LPATH/jar
+mkdir -p $LPATH/mcsys/jar
+mkdir -p $LPATH/mcsys/build
 mkdir -p $LPATH/unused 
 #
  if ! command -v joe &> /dev/null
@@ -115,6 +116,11 @@ fi
 # Clean Logfiles
 /usr/bin/find $LPATH/logs -type f -mtime +6 -delete > /dev/null 2>&1
 
+# Bedrock Part
+if [ $BEUPDATE = TRUE ]; then
+ echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Updateing floodgate"
+ cd $LPATH/mcsys || exit 1
+ wget -q 
 
 #Paper: Getting Update form your selected version.
 if [ $ASOFTWARE = "PAPER" ]; then
