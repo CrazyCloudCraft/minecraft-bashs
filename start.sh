@@ -1,7 +1,7 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
 # Version 2.5.2.0 made by CrazyCloudCraft 05/15/2022 UTC/GMT +1 https://crazycloudcraft.de
-# Script info: Do not change anything here
+# Do not configure this scipts!
 . ./config/mcsys.conf
 # Your local absolute path
 LPATH=/$OPTBASE/$SERVERBASE
