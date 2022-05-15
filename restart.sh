@@ -1,6 +1,6 @@
 #!/bin/bash
 # Made by CrazyCloudCraft
-# Update v2.5.1.1 on 24.04.2022
+# Update v2.5.2.0 on 15.05.2022
 
 # Configuration:
 # Set your server path. Where is your paper.jar?
@@ -16,7 +16,7 @@ MTRANZLATION="The server is not running. Starting server."
 # Script start. Do not configure this! #############################################
 
 # Build path
-CXPATH=/"$OPATH"/"$MPATH"
+CXPATH=/$OPATH/$MPATH
 
 # Check if offline
 if ! screen -list | grep -q "$MCNAME"; then
