@@ -58,5 +58,5 @@ if screen -list | grep -q "$MCNAME"; then
   pkill -15 -f "SCREEN -dmSL $MCNAME"
 fi
 
-echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Minecraft server $DISPLAYNAME stopped."
-echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Minecraft server $DISPLAYNAME stopped." | /usr/bin/logger -t $MCNAME
+echo -e "$PREFIX Minecraft server $DISPLAYNAME stopped."
+echo -e "$PREFIX Minecraft server $DISPLAYNAME stopped." | /usr/bin/logger -t $MCNAME
