@@ -88,7 +88,7 @@ fi
 
 # Bedrock Part
 if [ $BEUPDATE = TRUE ]; then
- echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Updateing floodgate"
+ echo -e "$MPREFIX Updateing floodgate"
  cd $LPATH/mcsys || exit 1
  wget -q https://raw.githubusercontent.com/Argantiu/system-api/main/api/v1/be-updater.sh -O be-updater.sh
  chmod +x be-updater.sh
@@ -296,3 +296,4 @@ if [ $ASOFTWARE = "WATERFALL" ]; then
 fi
  
 exit 1
+# End of file.
