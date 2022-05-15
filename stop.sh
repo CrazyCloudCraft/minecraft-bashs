@@ -53,7 +53,7 @@ done
 
 # Force quit if server is still open
 if screen -list | grep -q "$MCNAME"; then
-  echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m $DISPLAYNAME server still hasn't closed after 30 seconds, closing screen explicit"  | /usr/bin/logger -t $MCNAME
+  echo -e "$PREFIX $DISPLAYNAME server still hasn't closed after 30 seconds, closing screen explicit"  | /usr/bin/logger -t $MCNAME
   screen -S $MCNAME -X quit
   pkill -15 -f "SCREEN -dmSL $MCNAME"
 fi
