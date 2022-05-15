@@ -1,37 +1,8 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
-# Version 2.5.2.0 made by CrazyCloudCraft 15.05.2022 UTC/GMT +1 https://crazycloudcraft.de
-
-# Configuration:
-# Define your Minecraft version like 1.18.2 based on your Software
-# For Velocity you set the latest PROXY version ( in the moment: 3.1.2 (just look on https://papermc.io/downloads#Velocity )
-MAINVERSION=1.18.2
-# What type of Server Software do you use? 
-# You can use: PAPER, PURPUR, MOHIST, VELOCITY, BUNGEECORD, SPIGOT, BUKKIT
-ASOFTWARE=PAPER
-# Set your folder where the subfolders of your server shall run
-OPTBASE=opt
-# Set your server folder where your server shall run
-SERVERBASE=Paper
-# Backups go here underneath BPATH
-BPATH=Paper_backups
-# Do you need a Backup ? BACKUP=TRUE
-BACKUP=FALSE
-# What jar and screen name shall your Minecraft server have?
-MCNAME=paper
-# Amount of RAM that your Mincecraft server will use (M or G) e.g.: RAM=2024M or RAM=10G
-RAM=4G
-# Name of your java executable (Default java) e.g.: JAVABIN=/usr/bin/java
-JAVABIN=java17
-
-# Get Bedrock Updater? (in mcsys/be-updater.sh)
-BEUPDATE=TRUE
-# Geyser too? Because you didn't need it, 
-# if this server is connected with an proxy
-GBESUPPORT=TRUE
-
-# Script start: Do not change after here ###############################################
-
+# Version 2.5.2.0 made by CrazyCloudCraft 05/15/2022 UTC/GMT +1 https://crazycloudcraft.de
+# Script info: Do not change anything here
+. ./config/mcsys.conf
 # Your local absolute path
 LPATH=/$OPTBASE/$SERVERBASE
 mkdir -p $LPATH
@@ -89,7 +60,7 @@ mkdir -p $LPATH/unused
      echo "rpl installed"
  fi 
 # Accept eula.txt
-sed -i 's/false/true/g' eula.txt >/dev/null 2>&1
+sed -i 's/false/true/g' $LPATH/eula.txt >/dev/null 2>&1
 
 # Testing Dependencies
 if screen -list | grep -q "$MCNAME"; then
