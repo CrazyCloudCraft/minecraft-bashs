@@ -99,7 +99,7 @@ if [ $ASOFTWARE = "PAPER" ]; then
  cd $LPATH/mcsys/jar || exit 1
  rm -f version.json
  wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/ -O version.json
- LATEST=`cat version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " "`
+ LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
  wget -q https://papermc.io/api/v2/projects/paper/versions/$MAINVERSION/builds/$LATEST/downloads/paper-$MAINVERSION-$LATEST.jar -O paper-$MAINVERSION-$LATEST.jar
  unzip -qq -t paper-$MAINVERSION-$LATEST.jar
  if [ "$?" -ne 0 ]; then
