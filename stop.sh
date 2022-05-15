@@ -1,23 +1,8 @@
 #!/bin/bash
 # Minecraft Server auto stop script - 
-# Version 2.5.2.0 Made by CrazyCloudCraft 15.05.2022 https://crazycloudcraft.de
-# Configuration:
-
-# What jar and screen name does your Minecraft Server have?
-MCNAME=paper
-# The Messages displayed name. - Doesn't matter what you write here.
-DISPLAYNAME=Paper
-
-# Tranzlations:
-
-# Stopping message tranzlation:
-MESSAGESTOP="Server is stopping in"
-# Message time tranzlation:
-DISPLAYTRANZTIME="seconds"
-
-
-
-# Script start. Do not configure this! ##########################################
+# Version 2.5.2.0 Made by CrazyCloudCraft 05/15/2022 https://crazycloudcraft.de
+# Do not configure this scipts!
+. ./config/mcsys.conf
 
 if ! screen -list | grep -q "$MCNAME"; then
   echo "Server is not currently running!"
@@ -25,7 +10,7 @@ if ! screen -list | grep -q "$MCNAME"; then
 fi
 
 # Stop the server[A
-echo "Notification: Stopping $DISPLAYNAME server ..."
+echo -e "$PREFIX $NTRANZLATION"
 echo "Notification: Stopping $DISPLAYNAME server ..." | /usr/bin/logger -t $MCNAME
 
 # Start countdown notice on server
