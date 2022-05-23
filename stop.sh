@@ -2,7 +2,15 @@
 # Minecraft Server auto stop script - 
 # Version 2.5.2.0 Made by CrazyCloudCraft 05/15/2022 https://crazycloudcraft.de
 # Do not configure this scipts!
-. ./config/mcsys.conf
+OPTBASE=opt
+SERVERBASE=Paper
+MCNAME=mcpaper
+DISPLAYNAME=Paper
+
+MPREFIX="\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m"
+NTRANZLATION="Notification: Stppe $DISPLAYNAME Server ..."
+MESSAGESTOP="Server stoppt in"
+DISPLAYTRANZTIME="sekunden"
 
 if ! screen -list | grep -q "$MCNAME"; then
   echo "Server is not currently running!"
