@@ -377,3 +377,65 @@ if [ $ASOFTWARE = "BUNGEECORD" ] || [ $ASOFTWARE = "VELOCITY" ] || [ $ASOFTWARE 
  fi
  fi
 # Velocity part
+ if [ $ASOFTWARE = "VELOCITY" ]; then
+ wget -q https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/velocity/target/Geyser-Velocity.jar -O Geyser-Velocity.jar
+ unzip -qq -t Geyser-Velocity.jar
+ if [ "$?" -ne 0 ]; then
+  echo "Downloaded Geyser-Velocity is corrupt. No update." | /usr/bin/logger -t $MCNAME
+ else
+  if [ -f $LPATH/plugins/Geyser-Velocity.jar ]; then
+   echo "Geyser-Velocity.jar plugin exists" | /usr/bin/logger -t $MCNAME
+  else
+   touch $LPATH/plugins/Geyser-Velocity.jar
+  fi
+  diff -q Geyser-Velocity.jar $LPATH/plugins/Geyser-Velocity.jar >/dev/null 2>&1
+  if [ "$?" -eq 1 ]; then
+  cp Geyser-Velocity.jar Geyser-Velocity.jar."$(date +%Y.%m.%d.%H.%M.%S)"
+  mv Geyser-Velocity.jar $LPATH/plugins/Geyser-Velocity.jar
+  /usr/bin/find $LPATH/mcsys/geyser/* -type f -mtime +6 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+   echo "Geyser for Velocity has been updated" | /usr/bin/logger -t $MCNAME
+  else
+   echo "No Geyser-Velocity.jar update neccessary" | /usr/bin/logger -t $MCNAME
+   rm Geyser-Velocity.jar
+  fi
+ fi
+ fi
+fi
+
+# Error for Mod Servers
+if [ $ASOFTWARE = "FORGE" ] || [ $ASOFTWARE = "MOHIST" ] || [ $ASOFTWARE = "FABRIC" ] || [ $ASOFTWARE = "MINECRAFT" ] && [ $BESUPPORT = "TRUE" ]; then
+echo -e "Bedrock support doesn't work on this software! Please use an other sofware or disable Bedrock support."
+fi
+
+# Stop Bedrock edition part
+
+#Starting paper server
+cd $LPATH
+
+echo "Starting $LPATH/$MCNAME.jar" | /usr/bin/logger -t $MCNAME
+if [ $ASOFTWARE = "PAPER" ]; then
+ screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $MCNAME.jar nogui"
+ exit 0
+fi
+
+if [ $ASOFTWARE = "PURPUR" ]; then
+ screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $MCNAME.jar nogui"
+ exit 0
+fi
+
+if [ $ASOFTWARE = "VELOCITY" ]; then
+ screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar $MCNAME.jar"
+ exit 0
+fi
+
+if [ $ASOFTWARE = "MOHIST" ]; then
+ screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $MCNAME.jar nogui"
+ exit 0
+fi
+
+if [ $ASOFTWARE = "SPIGOT" ]; then
+ screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $MCNAME.jar nogui"
+ exit 0
+fi
+
+exit 1
