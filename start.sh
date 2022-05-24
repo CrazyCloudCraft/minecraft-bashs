@@ -25,6 +25,12 @@ RAM=500M
 # Name of your java executable (Default java) e.g.: JAVABIN=/usr/bin/java
 JAVABIN=java17
 
+# --- Bedrock Edition (MCPE) ---
+
+# Get Floodgate updater? Otherwise nobody can join without Java Edition account from Bedrock.
+BEUPDATE=FALSE
+# Geyser too? Because you didn't need it, if this server is connected with a proxy.
+GBESUPPORT=FALSE
 
 # Script start: Do not change after here ###############################################
 
