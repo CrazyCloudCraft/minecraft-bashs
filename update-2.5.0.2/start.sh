@@ -1,7 +1,9 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
-# Version 2.5 made by CrazyCloudCraft 03.04.2022 UTC/GMT +1 https://crazycloudcraft.de
-# Version 2.5.1 made by CrazyCloudCraft 09.04.2022 UTC/GMT +1 https://crazycloudcraft.de
+
+# THIS IS THE LAST VERSION OF minecraft-bashs. The new server-manager system that we support, is now here: https://github.com/Argantiu/system-api
+
+# Version 2.5.0.2 made by CrazyCloudCraft 25.05.2022 UTC/GMT +1 https://crazycloudcraft.de
 
 # Configuration:
 # Define your Minecraft version like 1.18.2 based on your Software
@@ -95,7 +97,7 @@ sed -i 's/false/true/g' $LPATH/eula.txt >/dev/null 2>&1
 sed -i 's/\restart-script: ./start.sh/\\restart-script: ./restart.sh/g' $LPATH/spigot.yml >/dev/null 2>&1
 
 #Testing Dependencies 2
-if screen -list | grep -q "$MCNAME "; then
+if screen -list | grep -q "$MCNAME"; then
     echo "Server has already started! Use screen -r $MCNAME to open it"
     exit 1
 fi
