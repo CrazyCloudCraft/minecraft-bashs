@@ -55,10 +55,10 @@ done
 
 # Force quit if server is still open
 if screen -list | grep -q "$MCNAME"; then
-  echo -e "$PREFIX $DISPLAYNAME server still hasn't closed after 30 seconds, closing screen explicit"  | /usr/bin/logger -t $MCNAME
+  echo -e "$DISPLAYNAME server still hasn't closed after 30 seconds, closing screen explicit"  | /usr/bin/logger -t $MCNAME
   screen -S $MCNAME -X quit
   pkill -15 -f "SCREEN -dmSL $MCNAME"
 fi
 
-echo -e "$PREFIX Minecraft server $DISPLAYNAME stopped."
-echo -e "$PREFIX Minecraft server $DISPLAYNAME stopped." | /usr/bin/logger -t $MCNAME
+echo -e "Minecraft server $DISPLAYNAME stopped."
+echo -e "Minecraft server $DISPLAYNAME stopped." | /usr/bin/logger -t $MCNAME
