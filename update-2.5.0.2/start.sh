@@ -106,10 +106,11 @@ cd $LPATH
 # Create backup for your server
 if [ $BACKUP = "TRUE" ]; then
  if [ -f "$MCNAME.jar" ]; then
-    echo "Backing up server (to /$OPTBASE/$BPATH folder)" | /usr/bin/logger -t $MCNAME
-    cd /$OPTBASE/$BPATH && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
-    cd $LPATH
-    tar -pzcf ../$BPATH/$(date +%Y.%m.%d.%H.%M.%S).tar.gz --exclude='FaWeSnapshots/*' --exclude='unused/*' ./
+    echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Create Backup..."
+    echo "Backing up server (to /unused/$BPATH folder)" | /usr/bin/logger -t $MCNAME
+    cd $LPATH/unused/$BPATH && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
+    cd $LPATH || exit 1
+    tar -pzcf ./unused/$BPATH/backup-"$(date +%Y.%m.%d.%H.%M.%S)".tar.gz --exclude='unused/*' ./
  fi
 fi
 
