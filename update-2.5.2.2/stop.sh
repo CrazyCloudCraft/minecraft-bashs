@@ -8,7 +8,7 @@ MCNAME=
 DISPLAYNAME=
 
 
-if ! screen -list | grep -q "$MCNAME "; then
+if ! screen -list | grep -q "$MCNAME"; then
   echo "Server is not currently running!"
   exit 1
 fi
@@ -48,7 +48,7 @@ screen -Rd $MCNAME -X stuff "Stop$(printf '\r')"
 # Wait up to 20 seconds for server to close
 StopChecks=0
 while [ $StopChecks -lt 30 ]; do
-  if ! screen -list | grep -q "$MCNAME "; then
+  if ! screen -list | grep -q "$MCNAME"; then
     break
   fi
   sleep 1;
