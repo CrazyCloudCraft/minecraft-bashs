@@ -42,7 +42,7 @@ sleep 1s
 screen -Rd $MCNAME -X stuff "say $MESSAGESTOP 1 $DISPLAYTRANZTIME ! $(printf '\r')"
 sleep 1s
 screen -Rd $MCNAME -X stuff "say Server stopped...$(printf '\r')"
-echo "Closing Server..."
+echo "Closing Server..." | /usr/bin/logger -t $MCNAME
 screen -Rd $MCNAME -X stuff "Stop$(printf '\r')"
 
 # Wait up to 20 seconds for server to close
@@ -62,5 +62,5 @@ if screen -list | grep -q "$MCNAME"; then
   pkill -15 -f "SCREEN -dmSL $MCNAME"
 fi
 
-echo -e "Minecraft server $DISPLAYNAME stopped."
+echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Minecraft server $DISPLAYNAME stopped."
 echo -e "Minecraft server $DISPLAYNAME stopped." | /usr/bin/logger -t $MCNAME
