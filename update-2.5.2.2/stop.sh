@@ -1,21 +1,21 @@
 #!/bin/bash
-# Minecraft Server auto stop script - 
+# Minecraft Server auto stop script -
 # Version 2.5.2.2 Made by CrazyCloudCraft 25.05.2022 https://crazycloudcraft.de
 # Do not configure this scipts!
 
 # What is your screen and jar name.
-MCNAME=
-DISPLAYNAME=
+MCNAME=paperd
+DISPLAYNAME=Paperdev
 
 
 if ! screen -list | grep -q "$MCNAME"; then
-  echo "Server is not currently running!"
+  echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Server is not currently running!"
   exit 1
 fi
 
 # Stop the server
-echo -e "Notification: Stopping $DISPLAYNAME server ..."
-echo -e "Notification: Stopping $DISPLAYNAME server ..." | /usr/bin/logger -t $MCNAME
+echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Notification: Stopping $DISPLAYNAME server ..."
+echo -e "[Argantiu] Notification: Stopping $DISPLAYNAME server ..." | /usr/bin/logger -t $MCNAME
 
 # Start countdown notice on server
 screen -Rd $MCNAME -X stuff "say Server is stopping...$(printf '\r')"
