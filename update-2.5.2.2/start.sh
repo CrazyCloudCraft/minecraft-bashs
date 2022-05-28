@@ -2,8 +2,8 @@
 # Minecraft Server start script - Check if server is already started
 
 # THIS IS THE LAST VERSION OF minecraft-bashs. The new server-manager system that we support, is now here: https://github.com/Argantiu/system-api
-
-# Version 2.5.2.2 made by CrazyCloudCraft 25.05.2022 UTC/GMT +1 https://crazycloudcraft.de
+# We will only update the depencies here.
+# Version 2.5.2.2 made by CrazyCloudCraft 28.05.2022 UTC/GMT +1 https://crazycloudcraft.de
 
 # Configuration:
 # Define your Minecraft version like 1.18.2 based on your Software
