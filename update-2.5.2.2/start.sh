@@ -464,3 +464,4 @@ if [[ $ASOFTWARE == "VELOCITY" ]] || [[ $ASOFTWARE == "BUNGEECORD" ]]; then
  screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar $MCNAME.jar"
  exit 0
 fi
+exit 1
