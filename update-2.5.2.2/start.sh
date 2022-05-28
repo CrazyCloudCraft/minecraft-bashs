@@ -1,6 +1,5 @@
 #!/bin/bash
 # Minecraft Server start script - Check if server is already started
-
 # THIS IS THE LAST VERSION OF minecraft-bashs. The new server-manager system that we support, is now here: https://github.com/Argantiu/system-api
 # We will only update the depencies here.
 # Version 2.5.2.2 made by CrazyCloudCraft 28.05.2022 UTC/GMT +1 https://crazycloudcraft.de
@@ -166,6 +165,7 @@ if [ $ASOFTWARE = "PURPUR" ]; then
   fi
  fi
 fi
+
 #Mohist: Getting Update form your selected version.
 if [ $ASOFTWARE = "MOHIST" ]; then
  mkdir -p $LPATH/mcsys/jar
@@ -189,7 +189,6 @@ if [ $ASOFTWARE = "MOHIST" ]; then
  fi
 fi
 
-#Spigot: Getting Update form your selected version.
 #Spigot: Getting Update form your selected version.
 if [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "BUKKIT" ]; then
  mkdir -p $LPATH/mcsys/build
