@@ -2,7 +2,7 @@
 # Minecraft Server installer for Easy Setup
 # Made By CrazyCloudCraft - Argantiu GmbH
 MCINSTALLERV=v1.0
-MCSETUPVERSION=v2.5.1.1
+MCSETUPVERSION=v2.5.2.2
 wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/"$MCSETUPVERSION"/server-start-scripts-"$MCSETUPVERSION".zip 
 apt-get -qq install zip
 unzip -qq server-start-scripts-"$MCSETUPVERSION".zip
