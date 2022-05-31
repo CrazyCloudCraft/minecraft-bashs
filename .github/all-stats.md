@@ -9,5 +9,8 @@
     </a>
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.1/total?color=green&label=v2.5.1%20Downloads&logo=github&style=flat-square" />
     </a>
+    </a>
+        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.2.2/total?color=green&label=Downloads%3A%20v2.5.2.2&logo=github&logoColor=green&style=flat-square" />
+    </a>
   
 [<- Back](https://github.com/CrazyCloudCraft/minecraft-bashs#support)
