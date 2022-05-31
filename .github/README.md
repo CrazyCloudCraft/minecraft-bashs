@@ -6,8 +6,12 @@
         <img src="https://img.shields.io/github/v/release/CrazyCloudCraft/minecraft-bashs?color=%2350AFFF&label=latest%20release&logo=FutureLearn&logoColor=50AFFF&style=flat-square" />
     </a>
     <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
-        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
+        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.2.2/total?color=green&label=Downloads%20v2.5.2.2&logo=github&logoColor=green&style=flat-square" />
     </a>
+  
+</a>
+        <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=All-Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
+</a>
   
 [![Codacy Security Scan](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master)](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml) 
 ### Shell scripts to run your Mineraft server very well
