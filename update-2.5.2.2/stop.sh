@@ -4,8 +4,8 @@
 # Do not configure this scipts!
 
 # What is your screen and jar name.
-MCNAME=paperd
-DISPLAYNAME=Paperdev
+MCNAME=
+DISPLAYNAME=
 
 
 if ! screen -list | grep -q "$MCNAME"; then
