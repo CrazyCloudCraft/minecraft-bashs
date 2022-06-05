@@ -36,10 +36,7 @@ You need java to run the server you can [get a repository here](https://www.azul
 The v2.5 scripts installs everything (exept for java) what they need to work.  
   
 ---
-### How to install this?
-
-You can take the [difficult way here](https://github.com/CrazyCloudCraft/minecraft-bashs/blob/master/.github/setup.md)  
-Or you take the  
+### How to install this?  
 ## Easy Setup
 Go into your server folders and paste this:
 ```
