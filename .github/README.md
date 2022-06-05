@@ -22,7 +22,9 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
 | Type | Software
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Server  | [PurpurMC](https://purpurmc.org) 
-| Server  | [PaperMC](https://papermc.io)         
+| Server  | [PaperMC](https://papermc.io)     
+| Server  | [SpigotMC](https://spigotmc.org) (Alpha)
+| Server  | [Bukkit](https://dev.bukkit.org/) (Alpha)  
 | Proxy   | [Velocity](https://velocitypowered.com) 
 | Proxy   | [Bungeecord](https://spigotmc.org)  
 | Modded  | [MohistMC](https://mohistmc.com)  
