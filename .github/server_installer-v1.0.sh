@@ -5,7 +5,7 @@ MCINSTALLERV=v1.0
 MCSETUPVERSION=2.5.2.2
 VMCSETUPVERSION=v2.5.2.2
 wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/"$VMCSETUPVERSION"/server-start-scripts-"$MCSETUPVERSION".zip
-rm server-start-scripts-"$VMCSETUPVERSION".zip
+rm server-start-scripts-"$MCSETUPVERSION".zip
 # apt-get -qq install zip
 # unzip -qq server-start-scripts-"$MCSETUPVERSION".zip
 wget -q https://raw.githubusercontent.com/CrazyCloudCraft/minecraft-bashs/master/update-"$MCSETUPVERSION"/restart.sh -O restart.sh
