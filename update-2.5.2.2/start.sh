@@ -1,5 +1,5 @@
 #!/bin/bash
-# Minecraft Server start script -- Check if server is already started
+# Minecraft Server start script -|- Check if server is already started
 # THIS IS THE LAST VERSION OF minecraft-bashs. The new server-manager system that we support, is now here: https://github.com/Argantiu/system-api
 # We will only update the depencies here.
 # Version 2.5.2.2 made by CrazyCloudCraft 28.05.2022 UTC/GMT +1 https://crazycloudcraft.de
@@ -48,6 +48,12 @@ mkdir -p $LPATH/jar
 mkdir -p $LPATH/unused
 mkdir -p $LPATH/plugins
 mkdir -p $LPATH/mcsys
+if [ -f server_installer-*.sh ]; then
+   rm server_installer-*.sh
+fi
+if [ -f start.sh~ ]; then
+   rm start.sh~
+fi
  if ! command -v joe &> /dev/null
  then
      apt-get install joe -y
