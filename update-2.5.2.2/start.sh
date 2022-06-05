@@ -87,10 +87,10 @@ mkdir -p $LPATH/mcsys
 sed -i 's/false/true/g' $LPATH/eula.txt >/dev/null 2>&1
 sed -i 's;restart-script: ./start.sh;restart-script: ./restart.sh;g' $LPATH/spigot.yml >/dev/null 2>&1
 # Replace settings
-sed -i "0,;OPTBASE=*;s/;OPTBASE=$OPTBASE" $LPATH/restart.sh >/dev/null 2>&1
-sed -i "0,;SERVERBASE=*;s/;SERVERBASE=$SERVERBASE" $LPATH/restart.sh >/dev/null 2>&1
-sed -i "0,;MCNAME=*;s/;MCNAME=$MCNAME" $LPATH/stop.sh >/dev/null 2>&1
-sed -i "0,;DISPLAYNAME=*;s/;DISPLAYNAME=$SERVERBASE" $LPATH/stop.sh >/dev/null 2>&1
+sed -i "0,/OPTBASE=*/s//OPTBASE=$OPTBASE/" $LPATH/restart.sh >/dev/null 2>&1
+sed -i "0,/SERVERBASE=*/s//SERVERBASE=$SERVERBASE/" $LPATH/restart.sh >/dev/null 2>&1
+sed -i "0,/MCNAME=*/s//MCNAME=$MCNAME/" $LPATH/stop.sh >/dev/null 2>&1
+sed -i "0,/DISPLAYNAME=*/s//DISPLAYNAME=$SERVERBASE/" $LPATH/stop.sh >/dev/null 2>&1
 
 #Testing Dependencies 2
 if screen -list | grep -q "$MCNAME"; then
