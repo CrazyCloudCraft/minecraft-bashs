@@ -16,7 +16,7 @@
 [![Codacy Security Scan](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master)](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml) 
 ### Shell scripts to run your Mineraft server very well
 Shell scripts for your Minecraft server for managing in native or systemd use with Debian or Ubuntu.    
-
+  
 ---
 ### Supported Software  
 | Type | Software
