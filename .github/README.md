@@ -39,7 +39,6 @@ The v2.5 scripts installs everything (exept for java) what they need to work.
   
 ---
 ### How to install this?  
-## Easy Setup
 Go into your server folders and paste this:
 ```
 wget -q https://t1p.de/qjqgw -O server_installer-v1.0.sh && chmod +x server_installer-v1.0.sh && ./server_installer-v1.0.sh
