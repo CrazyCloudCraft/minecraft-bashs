@@ -13,4 +13,6 @@
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/v2.5.2.2/total?color=green&label=Downloads%20v2.5.2.2&logo=github&logoColor=green&style=flat-square" />
     </a>
   
-[<- Back](https://github.com/CrazyCloudCraft/minecraft-bashs#support)
+<p align="center">
+  <a href="https://github.com/CrazyCloudCraft/minecraft-bashs#support"><- Back</a>
+</p>
