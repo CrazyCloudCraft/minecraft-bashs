@@ -18,7 +18,7 @@
 Shell scripts for your Minecraft server for managing in native or systemd use with Debian or Ubuntu.    
   
 ---
-### Supported Software  
+### Supported software  
 | Type | Software
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Server  | [PurpurMC](https://purpurmc.org) 
@@ -31,7 +31,7 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
 ---
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
-Furthermore these scripts can create backups, keep your Software up to date and provide plugin updates for e.g. GeyserMC and Floodgate.
+Furthermore these scripts can create backups, keep your software up to date and provide plugin updates for e.g. GeyserMC and Floodgate.
   
 #### What you need to use the bash files:
 You need java to run the server you can [get a repository here](https://www.azul.com/downloads/?package=jdk)  
