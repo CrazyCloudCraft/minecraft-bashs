@@ -51,8 +51,6 @@ And you are ready to start with `./start.sh`
 If you need setup help, or want to add features that aren't listed here  
 please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/issues) ! (Discord will be added soon)
     
-<h1 align="center">
-    <br>
-    [More stats](https://github.com/CrazyCloudCraft/minecraft-bashs/blob/master/.github/all-stats.md)
-    <br>
-</h1>
+<p align="center">
+  <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/blob/master/.github/all-stats.md">More stats</a>
+</p>
