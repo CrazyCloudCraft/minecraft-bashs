@@ -18,7 +18,11 @@
 Shell scripts for your Minecraft server for managing in native or systemd use with Debian or Ubuntu.    
   
 ---
-### Supported software  
+<h1 align="center">
+    <br>
+    Supported software
+    <br>
+</h1>
 | Type | Software
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Server  | [PurpurMC](https://purpurmc.org) 
