@@ -23,6 +23,7 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
     Supported software
     <br>
 </h1>
+  
 | Type | Software
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Server  | [PurpurMC](https://purpurmc.org) 
