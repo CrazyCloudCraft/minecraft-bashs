@@ -1,0 +1,89 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug] > "
+labels: ["bug"]
+assignees:
+  - crazycloudcraft
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: e.g. Discord, or something like that
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 2.5.2.2 (latest)
+        - 2.5.1.1 (older)
+        - 2.5.1 (not supported)
+    validations:
+      required: true
+  - type: dropdown
+    id: softwares
+    attributes:
+      label: What software are you seeing the problem on?
+      multiple: true
+      options:
+        - PaperMC
+        - PurPurMC
+        - SpigotMC (Alpha)
+        - Bukkit (Alpha)
+        - MohistMC
+        - Velocity
+        - Bungeecord
+    validations:
+      required: true
+  - type: dropdown
+    id: servertypes
+    attributes:
+      label: What software are you seeing the problem on?
+      multiple: true
+      options:
+        - Debian 11 Bullseye
+        - Debian 10 Buster
+        - Ubuntu 22.04 LTS
+        - Ubuntu 21.10
+        - Gentoo latest
+        - Other (please write it)
+    validations:
+      required: true
+  - type: textarea
+    id: specialservertype
+    attributes:
+      label: Your server type
+      description: Also, it could be not Supported if it's nothing from the table.
+      placeholder: Your special version
+      value: "Just that I choosed as the version"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://crazycloudcraft.de)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
