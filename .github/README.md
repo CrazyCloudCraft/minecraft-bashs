@@ -46,7 +46,7 @@ wget -q https://t1p.de/qjqgw -O server_installer-v1.0.sh && chmod +x server_inst
 After that, edit the start.sh file with `joe start.sh` or `nano start.sh`  
 And you are ready to start with `./start.sh`  
   
-You can stop or restart the server with ./<stop|restart|start>.sh
+You can stop or restart the server with `./<stop|restart|start>.sh`
   
 ### Support  
   
