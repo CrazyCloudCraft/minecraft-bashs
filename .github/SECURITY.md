@@ -16,3 +16,5 @@ We do not support forks or other (malware) downloads exapt for our [github site]
   
 Please write any security bugs directly to our issues.
 for direct support contact N1klasse#1486 on discord.
+
+[Here are more informations about privacy policy](https://crazycloudcraft.de/datenschutzerklaerung/)
