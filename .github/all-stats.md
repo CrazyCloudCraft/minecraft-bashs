@@ -1,8 +1,3 @@
-{
-  "no-inline-html": {
-    "allowed_elements": [ "a", "p" ]
-  }
-}
 </a>
 <p align="center">
         <img src="https://img.shields.io/github/v/release/CrazyCloudCraft/minecraft-bashs?color=%2350AFFF&label=latest%20release&logo=FutureLearn&logoColor=50AFFF&style=flat-square" />
@@ -19,5 +14,5 @@
     </a>
   
 <p align="center">
-  <a href="https://github.com/CrazyCloudCraft/minecraft-bashs#support"><- Back</a>
+  <a href="https://github.com/CrazyCloudCraft/minecraft-bashs#support"> <- Back </a>
 </p>
