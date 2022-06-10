@@ -25,27 +25,30 @@ OPTBASE=opt
 # Set your server folder, where your server shall run (serverbase).
 SERVERBASE=Paperdev
 
-# Backups go here underneath BPATH
-BPATH=Server_backups
-
-# Do you need a Backup ? BACKUP=TRUE
-BACKUP=FALSE
-
 # Wich system-name should have the console and main.jar?
 # Don't use something like "system" or "main" for example, 
 # because the system sometimes already use this names.
 MCNAME=paperd
+# Save is, to put "mc" before that name.
+
 # Amount of RAM that your Mincecraft server will use (M or G) e.g.: RAM=2024M or RAM=10G
 RAM=4G
 # Name of your java executable (Default java) e.g.: JAVABIN=/usr/bin/java
 JAVABIN=/usr/bin/java17
 
 # --- Bedrock Edition (MCPE) ---
-
 # Get Floodgate updater? Otherwise nobody can join without Java Edition account from Bedrock.
 BESUPPORT=TRUE
 # Geyser too? Because you didn't need it, if this server is connected with a proxy.
 GBESUPPORT=TRUE
+
+# --- Backups ---
+# Do you need backups?
+# Then you have to set it to TRUE
+BACKUP=FALSE
+# Were should the backups under "/ununsed/" be saved?
+# The backups will be saved in "/unused/(BPATH folder)"
+BPATH=Paper_backups
 
 # Script start: Do not change after here ###############################################
 
