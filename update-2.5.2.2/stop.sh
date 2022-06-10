@@ -1,6 +1,6 @@
 #!/bin/bash
 # Minecraft Server auto stop script - Do not configure this scipt!!
-# Version 2.5.2.2 Made by CrazyCloudCraft 25.05.2022 https://crazycloudcraft.de
+# Version 2.5.2.2 Made by CrazyCloudCraft 2022-06-10 https://crazycloudcraft.de
 MCNAME=
 DISPLAYNAME=
 #
