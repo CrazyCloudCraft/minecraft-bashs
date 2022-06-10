@@ -1,28 +1,39 @@
 #!/bin/bash
 # Minecraft Server start script -|- Check if server is already started
-# THIS IS THE LAST VERSION OF minecraft-bashs. The new server-manager system that we support, is now here: https://github.com/Argantiu/system-api
-# We will only update the depencies here.
-# Version 2.5.2.2 made by CrazyCloudCraft 28.05.2022 UTC/GMT +1 https://crazycloudcraft.de
+# Version 2.5.2.2 made by CrazyCloudCraft 2022-06-10 UTC/GMT +1 https://crazycloudcraft.de
 
+# Use STRG + k + x to save this settings (with joe's editor)
+# Use STRG + c to close it without saveing
 # Configuration:
-# Define your Minecraft version like 1.18.2 based on your Software
-# For Velocity you set the latest PROXY version ( in the moment: 3.1.2 (just look on https://papermc.io/downloads#Velocity )
+
+# Define your Minecraft version. For exaple 1.18.2, 1.18.1, 1.18, ...
+# Some software types don't need the Minecraft version e. g. velocity or bungeecord.
+# But it's better when you set here a version.
 MAINVERSION=1.18.2
 
 # Velocity Version. Please only change, if there is a new version.
 PRMCVERSION=3.1.2
-# What type of Server Software do you use?
-# You can use: PAPER, PURPUR, MOHIST, VELOCITY, BUNGEECORD
+
+# What type of server software do you use? 
+# You can use: < PAPER | PURPUR | MOHIST | VELOCITY | BUNGEECORD | SPIGOT | BUKKIT >
 ASOFTWARE=PAPER
-# Set your folder where the subfolders of your server shall run
+
+# Do you have a Subfolder for your server(s)? We recommend to set and use one.
+# E.g. home/server/(serverbase) or opt/(serverbase)
 OPTBASE=opt
-# Set your server folder where your server shall run
+
+# Set your server folder, where your server shall run (serverbase).
 SERVERBASE=Paperdev
+
 # Backups go here underneath BPATH
 BPATH=Server_backups
+
 # Do you need a Backup ? BACKUP=TRUE
 BACKUP=FALSE
-# What jar and screen name shall your Minecraft server have?
+
+# Wich system-name should have the console and main.jar?
+# Don't use something like "system" or "main" for example, 
+# because the system sometimes already use this names.
 MCNAME=paperd
 # Amount of RAM that your Mincecraft server will use (M or G) e.g.: RAM=2024M or RAM=10G
 RAM=4G
