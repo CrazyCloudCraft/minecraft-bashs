@@ -1,6 +1,6 @@
 #!/bin/bash
-# Made by CrazyCloudCraft
-# Update v2.5.2.2 on 25.05.2022 made by Argantiu
+# Minecraft Server auto stop script - Do not configure this scipt!!
+# Version 2.5.2.2 made by CrazyCloudCraft 2022-06-10 UTC/GMT +1 https://crazycloudcraft.de
 OPTBASE=
 SERVERBASE=
 
