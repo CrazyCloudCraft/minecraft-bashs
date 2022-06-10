@@ -15,8 +15,8 @@
   
 [![Codacy Security Scan](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master)](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml) 
 ### Shell scripts to run your Mineraft server very well
-Shell scripts for your Minecraft server for managing in native or systemd use with Debian or Ubuntu.    
-  w
+Shell scripts for your Minecraft server for managing in native or systemd use with Debian or Ubuntu.  
+  
 <h1 align="center">
     <br>
     Supported software
@@ -33,6 +33,7 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
 | Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord |
 | Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | ✔️
 ---
+  
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
 Furthermore these scripts can create backups, keep your software up to date and provide plugin updates for e.g. GeyserMC and Floodgate.  
