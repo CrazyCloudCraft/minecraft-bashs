@@ -229,26 +229,26 @@ if [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "BUKKIT" ]; then
   else
    touch $LPATH/mcsys/spitool/BuildTools.jar
   fi
-  diff BuildTools.jar $LPATH/mcsys/spitool/BuildTools.jar >/dev/null 2>&1
+  diff $LPATH/mcsys/build/BuildTools.jar $LPATH/mcsys/spitool/BuildTools.jar >/dev/null 2>&1
   if [ "$?" -eq 1 ]; then
+   cp $LPATH/mcsys/build/BuildTools.jar $LPATH/mcsys/spitool/BuildTools.jar
+   cd $LPATH/mcsys/spitool/ || exit 1
+   cp BuildTools.jar BuildTools.jar"$(date +%Y.%m.%d.%H.%M.%S)"
    cd $LPATH/mcsys/build || exit 1
-   cp BuildTools.jar $LPATH/mcsys/spitool/BuildTools.jar
    if [ $ASOFTWARE = "SPIGOT" ]; then
-    java -jar BuildTools.jar --rev $MAINVERSION
-    cp ./BuildTools/spigot-$MAINVERSION.jar ./spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
-    mv ./BuildTools/spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
+    java -jar BuildTools.jar --rev $MAINVERSION --compile-if-changed --output-dir $LPATH/mcsys/build/
+    cp $LPATH/mcsys/build/spigot-$MAINVERSION.jar $LPATH/mcsys/spitool/spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
+    mv $LPATH/mcsys/build/spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
    fi
    if [ $ASOFTWARE = "BUKKIT" ]; then
-    java -jar BuildTools.jar --rev $MAINVERSION --compile craftbukkit
-    cp ./BuildTools/craftbukkit-$MAINVERSION.jar ./craftbukkit-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
-    mv ./BuildTools/craftbukkit-$MAINVERSION.jar $LPATH/$MCNAME.jar
+    java -jar BuildTools.jar --rev $MAINVERSION --compile craftbukkit --compile-if-changed --output-dir $LPATH/mcsys/build/
+    cp $LPATH/mcsys/build/craftbukkit-$MAINVERSION.jar $LPATH/mcsys/spitool/craftbukkit-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
+    mv $LPATH/mcsys/build/craftbukkit-$MAINVERSION.jar $LPATH/$MCNAME.jar
    fi
-   rm -r BuildTools
-   cd $LPATH/mcsys/spitool/ || exit 1
-   mv BuildTools.jar BuildTools.jar"$(date +%Y.%m.%d.%H.%M.%S)"
+   rm -r $LPATH/mcsys/build/BuildTools
    /usr/bin/find $LPATH/mcsys/build/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
    /usr/bin/find $LPATH/mcsys/spitool/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME»
-   echo "spigot-$MAINVERSION.jar has been updated" | /usr/bin/logger -t $MCNAME
+   echo "spigot/bukkit-$MAINVERSION.jar has been updated" | /usr/bin/logger -t $MCNAME
   else
    echo "No BuildTools.jar update neccessary" | /usr/bin/logger -t $MCNAME
    rm BuildTools.jar
