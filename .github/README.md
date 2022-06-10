@@ -33,10 +33,9 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
 | Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord | 🟢
 | Proxy   | [WaterfallMC](https://papermc.io)       | Plugins        | Bungeecord | 🔴
 | Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | 🟢
-  
-🟢 = Supported
-🟡 = Alpha
-🔴 = Soon
+| | | | | 🟢 = Supported
+| | | | | 🟡 = Alpha
+| | | | | 🔴 = Soon
 ---
   
 ### What can I do with this?
