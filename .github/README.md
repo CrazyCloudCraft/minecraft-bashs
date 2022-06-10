@@ -16,23 +16,22 @@
 [![Codacy Security Scan](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master)](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml) 
 ### Shell scripts to run your Mineraft server very well
 Shell scripts for your Minecraft server for managing in native or systemd use with Debian or Ubuntu.    
-  
----
+  w
 <h1 align="center">
     <br>
     Supported software
     <br>
 </h1>
   
-| Type | Software
-|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
-| Server  | [PurpurMC](https://purpurmc.org) 
-| Server  | [PaperMC](https://papermc.io)     
-| Server  | [SpigotMC](https://spigotmc.org) (Alpha)
-| Server  | [Bukkit](https://dev.bukkit.org/) (Alpha)  
-| Proxy   | [Velocity](https://velocitypowered.com) 
-| Proxy   | [Bungeecord](https://spigotmc.org)  
-| Modded  | [MohistMC](https://mohistmc.com)  
+| Type | Software | What supported | Plugin API base | Extra support |
+|-|-|-|-|-|
+| Server  | [PurpurMC](https://purpurmc.org)         | Plugins        | Paper, Spigot, Bukkit | ✔️
+| Server  | [PaperMC](https://papermc.io)            | Plugins        | Paper, Spigot, Bukkit | ✔️
+| Server  | [SpigotMC](https://spigotmc.org)         | Plugins        | Spigot, Bukkit |
+| Server  | [Bukkit](https://dev.bukkit.org/)        | Plugins        | Bukkit |
+| Proxy   | [Velocity](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | ✔️
+| Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord |
+| Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | ✔️
 ---
 ### What can I do with this?
 These scripts won't only restart or stop and start your server.  
