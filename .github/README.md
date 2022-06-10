@@ -23,15 +23,19 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
     <br>
 </h1>
   
-| Type | Software | What supported | Plugin API base | Extra support |
+| Type | Software | What supported | Plugin API base | State |
 |-|-|-|-|-|
-| Server  | [PurpurMC](https://purpurmc.org)         | Plugins        | Paper, Spigot, Bukkit | ✔️
-| Server  | [PaperMC](https://papermc.io)            | Plugins        | Paper, Spigot, Bukkit | ✔️
-| Server  | [SpigotMC](https://spigotmc.org)         | Plugins        | Spigot, Bukkit |
-| Server  | [Bukkit](https://dev.bukkit.org/)        | Plugins        | Bukkit |
-| Proxy   | [Velocity](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | ✔️
-| Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord |
-| Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | ✔️
+| Server  | [PurpurMC](https://purpurmc.org)         | Plugins        | Paper, Spigot, Bukkit | 🟢
+| Server  | [PaperMC](https://papermc.io)            | Plugins        | Paper, Spigot, Bukkit | 🟢
+| Server  | [SpigotMC](https://spigotmc.org)         | Plugins        | Spigot, Bukkit | 🟡
+| Server  | [Bukkit](https://dev.bukkit.org/)        | Plugins        | Bukkit | 🟡
+| Proxy   | [VelocityMC](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | 🟢
+| Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord | 🟢
+| Proxy   | [WaterfallMC](https://papermc.io)       | Plugins        | Bungeecord | 🔴
+| Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | 🟢
+🟢 = Supported
+🟡 = Alpha
+🔴 = Soon
 ---
   
 ### What can I do with this?
