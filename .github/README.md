@@ -49,7 +49,7 @@ Go into your server folders `cd /myservers/server/niceserver/ ...` and paste thi
 ```
 wget -q https://t1p.de/qjqgw -O server_installer-v1.0.sh && chmod +x server_installer-v1.0.sh && ./server_installer-v1.0.sh
 ```
-After that, configure the start.sh file with `joe start.sh` or `nano start.sh` (`apt-get install nano`)
+After that, configure the start.sh file with `joe start.sh` or `nano start.sh` (`apt-get install nano`)  
 And you are ready to start with `./start.sh`  
   
 You can stop or restart the server with `./<stop|restart|start>.sh`
