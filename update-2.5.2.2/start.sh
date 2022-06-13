@@ -58,7 +58,6 @@ mkdir -p $LPATH
 
 #Install depencies
 touch $MCNAME.jar
-mkdir -p $LPATH/jar
 mkdir -p $LPATH/unused
 mkdir -p $LPATH/plugins
 mkdir -p $LPATH/mcsys
