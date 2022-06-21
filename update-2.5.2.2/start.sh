@@ -306,7 +306,7 @@ if [ $ASOFTWARE = "BUNGEECORD" ]; then
 fi
 # Bedrock Updater
 
-# Floodgate for Spigot
+# Floodgate for normal servers
 if [[ $ASOFTWARE == "PAPER" ]] || [[ $ASOFTWARE == "SPIGOT" ]] || [[ $ASOFTWARE == "BUKKIT" ]] || [[ $ASOFTWARE == "PURPUR" ]] && [[ $BESUPPORT == "TRUE" ]]; then
  cd $LPATH/plugins || exit 1
  mkdir -p $LPATH/mcsys/floodgate
