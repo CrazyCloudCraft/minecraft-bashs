@@ -15,7 +15,8 @@ MAINVERSION=1.18.2
 PRMCVERSION=3.1.2
 
 # What type of server software do you use? 
-# You can use: < PAPER | PURPUR | MOHIST | VELOCITY | BUNGEECORD | SPIGOT | BUKKIT >
+# You can use: < PAPER | PURPUR | MOHIST | VELOCITY | BUNGEECORD | WATERFALL >
+#  Alpha versions: < SPIGOT | BUKKIT >
 ASOFTWARE=PAPER
 
 # Do you have a Subfolder for your server(s)? We recommend to set and use one.
@@ -262,7 +263,7 @@ if [ $ASOFTWARE = "VELOCITY" ]; then
  rm -f version.json
  wget -q https://api.papermc.io/v2/projects/velocity/versions/$PRMCVERSION-SNAPSHOT -O version.json
  LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
- wget -q https://api.papermc.io/v2/projects/velocity/versions/$PRMCVERSION-SNAPSHOT/builds/$LATEST/downloads/velocity-$PRMCVERSION-SNAPSHOT-$LATEST.jar -O velocity-$PRMCVERSION-SNAPSHOT-$LAT
+ wget -q https://api.papermc.io/v2/projects/velocity/versions/$PRMCVERSION-SNAPSHOT/builds/$LATEST/downloads/velocity-$PRMCVERSION-SNAPSHOT-$LATEST.jar -O velocity-$PRMCVERSION-SNAPSHOT-$LATEST.jar
  unzip -qq -t velocity-$PRMCVERSION-SNAPSHOT-$LATEST.jar
  if [ "$?" -ne 0 ]; then
   echo "Downloaded velocity-$PRMCVERSION-SNAPSHOT-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
@@ -277,6 +278,33 @@ if [ $ASOFTWARE = "VELOCITY" ]; then
   else
    echo "No velocity-$PRMCVERSION-SNAPSHOT-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
    rm velocity-$PRMCVERSION-SNAPSHOT-$LATEST.jar
+   rm version.json
+  fi
+ fi
+fi
+
+#Waterfall: Getting Update form your selected version.
+if [ $ASOFTWARE = "WATERFALL" ]; then
+ mkdir -p $LPATH/mcsys/jar
+ cd $LPATH/mcsys/jar || exit 1
+ rm -f version.json
+ wget -q https://api.papermc.io/v2/projects/waterfall/versions/$MAINVERSION -O version.json
+ LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -e "[0-9]" | tr -d " ")
+ wget -q https://api.papermc.io/v2/projects/waterfall/versions/$MAINVERSION/builds/$LATEST/downloads/waterfall-$MAINVERSION-$LATEST.jar -O waterfall-$MAINVERSION-$LATEST.jar
+ unzip -qq -t waterfall-$MAINVERSION-$LATEST.jar
+ if [ "$?" -ne 0 ]; then
+  echo "Downloaded waterfall-$MAINVERSION-$LATEST.jar is corrupt. No update." | /usr/bin/logger -t $MCNAME
+ else
+  diff -q waterfall-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar >/dev/null 2>&1
+  if [ "$?" -eq 1 ]; then
+   cp waterfall-$MAINVERSION-$LATEST.jar waterfall-$MAINVERSION-$LATEST.jar."$(date +%Y.%m.%d.%H.%M.%S)"
+   mv waterfall-$MAINVERSION-$LATEST.jar $LPATH/$MCNAME.jar
+   /usr/bin/find $LPATH/mcsys/jar/* -type f -mtime +10 -delete 2>&1 | /usr/bin/logger -t $MCNAME
+   echo "waterfall-$MAINVERSION-$LATEST has been updated" | /usr/bin/logger -t $MCNAME
+   rm version.json
+  else
+   echo "No waterfall-$MAINVERSION-$LATEST update neccessary" | /usr/bin/logger -t $MCNAME
+   rm waterfall-$MAINVERSION-$LATEST.jar
    rm version.json
   fi
  fi
@@ -484,7 +512,7 @@ if [[ $ASOFTWARE == "PAPER" ]] || [[ $ASOFTWARE == "PURPUR" ]] || [[ $ASOFTWARE 
  screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $MCNAME.jar nogui"
  exit 0
 fi
-if [[ $ASOFTWARE == "VELOCITY" ]] || [[ $ASOFTWARE == "BUNGEECORD" ]]; then
+if [[ $ASOFTWARE == "VELOCITY" ]] || [[ $ASOFTWARE == "WATERFALL" ]] || [[ $ASOFTWARE == "BUNGEECORD" ]]; then
  screen -d -m -L -S $MCNAME  /bin/bash -c "$JAVABIN -Xms$RAM -Xmx$RAM -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar $MCNAME.jar"
  exit 0
 fi
