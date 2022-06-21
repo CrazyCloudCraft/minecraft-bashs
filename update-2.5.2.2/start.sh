@@ -213,7 +213,7 @@ if [ $ASOFTWARE = "MOHIST" ]; then
  fi
 fi
 
-#Spigot: Getting Update form your selected version.
+#Spigot / Bukkit: Getting Update form your selected version.
 if [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "BUKKIT" ]; then
  mkdir -p $LPATH/mcsys/build
  mkdir -p $LPATH/mcsys/spitool
@@ -235,12 +235,12 @@ if [ $ASOFTWARE = "SPIGOT" ] || [ $ASOFTWARE = "BUKKIT" ]; then
    cp BuildTools.jar BuildTools.jar"$(date +%Y.%m.%d.%H.%M.%S)"
    cd $LPATH/mcsys/build || exit 1
    if [ $ASOFTWARE = "SPIGOT" ]; then
-    java -jar BuildTools.jar --rev $MAINVERSION --compile-if-changed --output-dir $LPATH/mcsys/build/
+    java -jar BuildTools.jar --rev $MAINVERSION #--output-dir $LPATH/mcsys/build/
     cp $LPATH/mcsys/build/spigot-$MAINVERSION.jar $LPATH/mcsys/spitool/spigot-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
     mv $LPATH/mcsys/build/spigot-$MAINVERSION.jar $LPATH/$MCNAME.jar
    fi
    if [ $ASOFTWARE = "BUKKIT" ]; then
-    java -jar BuildTools.jar --rev $MAINVERSION --compile craftbukkit --compile-if-changed --output-dir $LPATH/mcsys/build/
+    java -jar BuildTools.jar --rev $MAINVERSION --compile craftbukkit 
     cp $LPATH/mcsys/build/craftbukkit-$MAINVERSION.jar $LPATH/mcsys/spitool/craftbukkit-$MAINVERSION.jar"$(date +%Y.%m.%d.%H.%M.%S)"
     mv $LPATH/mcsys/build/craftbukkit-$MAINVERSION.jar $LPATH/$MCNAME.jar
    fi
