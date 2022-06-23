@@ -31,7 +31,7 @@ Shell scripts for your Minecraft server for managing in native or systemd use wi
 | Server  | [Bukkit](https://dev.bukkit.org/)        | Plugins        | Bukkit | Alpha 1.1
 | Proxy   | [VelocityMC](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | Supported
 | Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord | Supported
-| Proxy   | [WaterfallMC](https://papermc.io)       | Plugins        | Bungeecord | Soon
+| Proxy   | [WaterfallMC](https://papermc.io)       | Plugins        | Bungeecord | Alpha 1.0
 | Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | Supported
 ---
   
