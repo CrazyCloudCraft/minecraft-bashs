@@ -1,7 +1,6 @@
 #!/bin/bash
 # Minecraft Server installer for Easy Setup
 # Made By CrazyCloudCraft - Argantiu GmbH
-MCINSTALLERV=v1.0
 MCSETUPVERSION=2.5.2.2
 VMCSETUPVERSION=v2.5.2.2
 wget -q https://github.com/CrazyCloudCraft/minecraft-bashs/releases/download/"$VMCSETUPVERSION"/server-start-scripts-"$MCSETUPVERSION".zip
