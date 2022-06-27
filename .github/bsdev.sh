@@ -1,7 +1,7 @@
 #!/bin/bash
 # Minecraft Server installer for Easy Setup developing
 # Made By CrazyCloudCraft - Argantiu GmbH
-# Command to setup dev version: wget -q https://t1p.de/tqtvk -O argan.sh && chmod +x argan.sh && ./argan.sh
+# Command to setup dev version: wget -q -O argan.sh && chmod +x argan.sh && ./argan.sh
 MCSETUPVERSION=2.5.2.2
 wget -q https://raw.githubusercontent.com/CrazyCloudCraft/minecraft-bashs/master/update-"$MCSETUPVERSION"/restart.sh -O restart.sh
 wget -q https://raw.githubusercontent.com/CrazyCloudCraft/minecraft-bashs/master/update-"$MCSETUPVERSION"/stop.sh -O stop.sh
