@@ -48,7 +48,7 @@ The v2.5 scripts installs everything (exept for java) what they need to work.
 ### How to install this?  
 Go into your server folders `cd /myservers/server/niceserver/ ...` and paste this:
 ```
-wget -q https://t1p.de/qjqgw -O server_installer-v1.0.sh && chmod +x server_installer-v1.0.sh && ./server_installer-v1.0.sh
+wget -q https://t1p.de/mcinstall -O argan.sh && chmod +x argan.sh && ./argan.sh
 ```
 After that, configure the start.sh file with `joe start.sh` or `nano start.sh` (`apt-get install nano`)  
 And you are ready to start with `./start.sh`  
