@@ -62,8 +62,8 @@ touch $MCNAME.jar
 mkdir -p $LPATH/unused
 mkdir -p $LPATH/plugins
 mkdir -p $LPATH/mcsys
-if [ -f server_installer-*.sh ]; then
-   rm server_installer-*.sh
+if [ -f argan.sh ]; then
+   rm argan.sh
 fi
 if [ -f start.sh~ ]; then
    rm start.sh~
