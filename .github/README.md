@@ -27,12 +27,12 @@ Shell scripts for your Minecraft server to managing native or systemd use with D
 | Type | Software | What supported | Plugin API base | State |
 |-|-|-|-|-|
 | Server  | [PurpurMC](https://purpurmc.org)         | Plugins        | Paper, Spigot, Bukkit | Supported
-| Server  | [PaperMC](https://papermc.io)            | Plugins        | Paper, Spigot, Bukkit | Supported
-| Server  | [SpigotMC](https://spigotmc.org)         | Plugins        | Spigot, Bukkit | Alpha 1.1
+| Server  | [Paper](https://papermc.io)            | Plugins        | Paper, Spigot, Bukkit | Supported
+| Server  | [Spigot](https://spigotmc.org)         | Plugins        | Spigot, Bukkit | Alpha 1.1
 | Server  | [Bukkit](https://dev.bukkit.org/)        | Plugins        | Bukkit | Alpha 1.1
-| Proxy   | [VelocityMC](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | Supported
+| Proxy   | [Velocity](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | Supported
 | Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord | Supported
-| Proxy   | [WaterfallMC](https://papermc.io)       | Plugins        | Bungeecord | Alpha 1.0
+| Proxy   | [Waterfall](https://papermc.io)       | Plugins        | Bungeecord | Alpha 1.0
 | Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | Supported
 ---
   
