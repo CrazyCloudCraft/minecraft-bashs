@@ -14,7 +14,5 @@ chmod +x restart.sh
 apt-get -qq install joe
 echo -e "\033[1;32m__________"
 echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Setup finished!"
-echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Please edit now the start.sh files with joe start.sh"
-sleep 3
-# rm server_installer-"$MCINSTALLERV".sh
+echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Please edit now the start.sh file with > joe start.sh <"
 exit 1
