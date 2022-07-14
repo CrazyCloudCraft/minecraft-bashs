@@ -18,9 +18,13 @@
     <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml">
         <img src="https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master" />
     </a>
-   
-### Shell scripts to run your Mineraft server very well
-Shell scripts for your Minecraft server to managing native or systemd use with Debian or Ubuntu.  
+  
+<h3 align="center">
+    Shell scripts to run your Mineraft server very well
+</h3>
+<h4 align="center">
+Shell scripts for your Minecraft server to managing native or systemd use with Debian or Ubuntu.
+</h4>
   
 <h1 align="center">
     <br>
