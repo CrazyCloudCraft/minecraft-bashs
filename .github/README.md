@@ -14,7 +14,11 @@
         <img src="https://img.shields.io/github/downloads/CrazyCloudCraft/minecraft-bashs/total?color=green&label=All-Downloads&logo=GitHub&logoColor=74FF00&style=flat-square" />
 </a>
   
-[![Codacy Security Scan](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master)](https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml) 
+<p align="center">
+    <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml">
+        <img src="https://github.com/CrazyCloudCraft/minecraft-bashs/actions/workflows/codacy.yml/badge.svg?branch=master" />
+    </a>
+   
 ### Shell scripts to run your Mineraft server very well
 Shell scripts for your Minecraft server to managing native or systemd use with Debian or Ubuntu.  
   
