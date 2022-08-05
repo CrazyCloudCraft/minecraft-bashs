@@ -1,0 +1,17 @@
+Exapt $name.jar
+Exapt cache
+Exapt eula.txt
+Exapt logs
+Exapt libraries
+Exapt mcsys
+Exapt paper.yml-README.txt
+Exapt screenlog.*
+Exapt versions
+Exapt unused
+
+
+( Exapt
+
+help.yml
+banned-ips.json
+banned-players.json
