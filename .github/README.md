@@ -40,7 +40,7 @@ Shell scripts for your Minecraft server to managing native or systemd use with D
 | Server  | [Bukkit](https://dev.bukkit.org/)        | Plugins        | Bukkit | Alpha 1.1
 | Proxy   | [Velocity](https://velocitypowered.com)  | Plugins        | Velocity, ([Bungeecord](https://forums.papermc.io/threads/snap-run-bungeecord-plugins-on-velocity.31/)) | Supported
 | Proxy   | [Bungeecord](https://spigotmc.org)       | Plugins        | Bungeecord | Supported
-| Proxy   | [Waterfall](https://papermc.io)       | Plugins        | Bungeecord | Alpha 1.0
+| Proxy   | [Waterfall](https://papermc.io)       | Plugins        | Bungeecord | Supported
 | Modded  | [MohistMC](https://mohistmc.com)         | Plugins & Mods | Paper, Spigot, Bukkit, Forge | Supported
 ---
   
