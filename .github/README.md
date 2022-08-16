@@ -26,6 +26,10 @@
 Shell scripts for your Minecraft server to managing native or systemd use with Debian or Ubuntu.
 </h4>
   
+<p align="center">
+  <a href="https://github.com/Argantiu/system-api/tree/main/api/v2">Major update v3 comming soon!!!</a>
+</p>
+  
 <h1 align="center">
     <br>
     Supported software
