@@ -95,6 +95,11 @@ fi
      apt-get install diffutils -y
      echo "diffutils installed"
  fi
+ if ! command -v jq &> /dev/null
+ then
+     apt-get install jq -y
+     echo "jq installed"
+ fi
  #Testing Dependencies
 sed -i 's/false/true/g' $LPATH/eula.txt >/dev/null 2>&1
 sed -i 's;restart-script: ./start.sh;restart-script: ./restart.sh;g' $LPATH/spigot.yml >/dev/null 2>&1
@@ -151,7 +156,7 @@ if [ $ASOFTWARE = "PURPUR" ]; then
  cd $LPATH/mcsys/jar || exit 1
  rm -f version.json
  wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION -O version.json
- LATEST=cat < version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2
+ LATEST=$(cat < version.json | jq -r ".builds" | grep -v "," | grep -v ":" | grep -e "[0-9]" | cut -d "\"" -f2)
  wget -q https://api.purpurmc.org/v2/purpur/$MAINVERSION/$LATEST/download -O purpur-$MAINVERSION-$LATEST.jar
  unzip -qq -t purpur-$MAINVERSION-$LATEST.jar
  if [ "$?" -ne 0 ]; then
