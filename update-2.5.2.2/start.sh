@@ -43,14 +43,6 @@ BESUPPORT=TRUE
 # Geyser too? Because you didn't need it, if this server is connected with a proxy.
 GBESUPPORT=TRUE
 
-# --- Backups ---
-# Do you need backups?
-# Then you have to set it to TRUE
-BACKUP=FALSE
-# Were should the backups under "/ununsed/" be saved?
-# The backups will be saved in "/unused/(BPATH folder)"
-BPATH=Paper_backups
-
 # Script start: Do not change after here ###############################################
 
 # Your local absolute path
@@ -122,17 +114,6 @@ fi
 
 # Change directory to server directory
 cd $LPATH
-
-# Create backup for your server
-if [ $BACKUP = "TRUE" ]; then
- if [ -f "$MCNAME.jar" ]; then
-    echo -e "\033[1;30m[\033[1;32mArgantiu\033[1;30m]\033[0;37m Create Backup..."
-    echo "Backing up server (to /unused/$BPATH folder)" | /usr/bin/logger -t $MCNAME
-    cd $LPATH/unused/$BPATH && ls -1tr | head -n -10 | xargs -d '\n' rm -f --
-    cd $LPATH || exit 1
-    tar -pzcf ./unused/$BPATH/backup-"$(date +%Y.%m.%d.%H.%M.%S)".tar.gz --exclude='unused/*' ./
- fi
-fi
 
 # Clean Logfiles
 /usr/bin/find $LPATH/logs -type f -mtime +6 -delete > /dev/null 2>&1
