@@ -27,7 +27,7 @@ Shell scripts for your Minecraft server to managing native or systemd use with D
 </h4>
   
 <p align="center">
-  <a href="https://github.com/Argantiu/system-api/tree/main/api/v2">Major update v3 comming soon!!!</a>
+  <a href="https://github.com/Argantiu/minecraft-manager">Major update v3 comming soon!!!</a>
 </p>
   
 <h1 align="center">
