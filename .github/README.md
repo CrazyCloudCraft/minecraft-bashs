@@ -71,7 +71,8 @@ You can stop or restart the server with `./<stop|restart|start>.sh`
 ### Support  
   
 If you need setup help, or want to add features that aren't listed here  
-please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/issues) ! (Discord will be added soon)
+please just write an [issue](https://github.com/CrazyCloudCraft/minecraft-bashs/issues) ! (Discord will be added soon)  
+ogy.de or t1p.de are save shortlinks that we use. We test them per month to check the savety of them.  
     
 <p align="center">
   <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/blob/master/.github/all-stats.md">More stats</a>
