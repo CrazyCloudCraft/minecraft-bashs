@@ -15,6 +15,6 @@ This software scipts are completely made by CrazyCloudCraft.
 We do not support forks or other (malware) downloads exapt for our [github site](https://github.com/CrazyCloudCraft/minecraft-bashs/). 
   
 Please write any security bugs directly to our issues.
-for direct support contact N1klasse#1486 on discord.
+for direct support contact N1klasse#1486 on discord or our e-mail kontakt@buzcraft.de
 
 [Here are more informations about privacy policy](https://crazycloudcraft.de/datenschutzerklaerung/)
