@@ -1,8 +1,13 @@
 #!/bin/bash
 # Minecraft manager by CrazyCloudCraft https://crazycloudcraft.de
-# This is a rewrite of the old version but only with old functions
+# This is a rewrite of the old version but with some new features.
 
-AVERSION=
-AVELOVERSION=
-ASOFTWARE=
-OPTBASE=
+MCVERSION=
+PRVERSION=
+MCSOFT=
+MCOPTB=
+MCBASE=
+MCNAME=
+MCRAM=
+MCBIN=
+BESUP=
