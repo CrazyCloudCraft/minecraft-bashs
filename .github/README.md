@@ -3,6 +3,9 @@
     <img src="https://crazycloudcraft.de/wp-content/uploads/2021/04/cropped-crazycloudcraft-icon-server.png" width="150">
 </a>
 <p align="center">
+  <a href="https://github.com/Argantiu/minecraft-manager">Major update v3 comming soon!!!</a>
+</p>
+<p align="center">
     <a href="https://github.com/CrazyCloudCraft/minecraft-bashs/releases">
         <img src="https://img.shields.io/github/v/release/CrazyCloudCraft/minecraft-bashs?color=%2350AFFF&label=latest%20release&logo=FutureLearn&logoColor=50AFFF&style=flat-square" />
     </a>
@@ -26,9 +29,6 @@
 Shell scripts for your Minecraft server to managing native or systemd use with Debian or Ubuntu.
 </h4>
   
-<p align="center">
-  <a href="https://github.com/Argantiu/minecraft-manager">Major update v3 comming soon!!!</a>
-</p>
   
 <h1 align="center">
     <br>
